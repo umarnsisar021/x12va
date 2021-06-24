@@ -1,0 +1,119 @@
+.searchbar__area {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    background-color: #079F80;
+    padding-bottom: 60px;
+}
+
+.searchbar__area > h2 {
+    font-weight: 400;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.search__input {
+    width: 580px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 19px;
+    margin: 0 auto;
+}
+
+.searchbar {
+    width: 78%;
+    border: 0;
+    outline: none;
+    padding: 17px 20px;
+    font-size: 13px;
+}
+
+.search__button {
+    color: #fff;
+    background-image: url("../../../Assets/Images/Group\ 326.png");
+    background-size: cover;
+    background-position: center center;
+    width: 22%;
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media (min-width:801px) and (max-width:990px) {
+    .searchbar__area > h2 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    
+    }
+}
+
+@media (min-width:700px) and (max-width:800px) {
+    .searchbar__area {
+        width: 100%;
+    }
+    .searchbar__area > h2 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (min-width:601px) and (max-width:699px) {
+    .searchbar__area > h2 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .searchbar__area {
+        width: 100%;
+    }
+}
+@media (min-width:501px) and (max-width:600px) {
+    .searchbar__area > h2 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .search__input {
+        width: 90%;
+        padding: 3px;
+        margin: 0 auto;
+    }
+    
+    .searchbar {
+        width: 64%;
+        margin-top: 25px;
+        padding: 10px 12px;
+        margin:0 auto;
+    }
+}
+@media (min-width:300px) and (max-width:500px) {
+    
+    .searchbar__area > h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+.search__input {
+    width: 90%;
+    padding: 3px;
+    margin: 0 auto;
+}
+
+.searchbar {
+    padding: 10px 12px;
+    font-size: 12px;
+}
+
+.search__button {
+    background-size: cover;
+}
+}

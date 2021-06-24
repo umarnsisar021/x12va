@@ -1,0 +1,19 @@
+.evSec__wrapper {
+    background-color: #F6F7FA;
+}
+
+.evSec__header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    padding: 0px 20px;
+    border-bottom: 3px solid #066FC0;
+}
+
+.evSec__header h2 {
+    font-weight: 400;
+    padding-left: 150px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+

@@ -1,0 +1,21 @@
+.form__wrapperCont {
+    margin-top: 20px;
+}
+
+.form__wrapperCont > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.file__drag {
+    border: 2px dashed #000;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 2px;
+    outline: none;
+    transition: border .24s ease-in-out;
+    
+}

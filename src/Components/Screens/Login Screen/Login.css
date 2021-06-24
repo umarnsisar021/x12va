@@ -1,0 +1,85 @@
+.modal__size {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.modal__wrapper {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal__wrapper > h2 {
+    text-align: center;
+    color: #066FC0;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+
+.modal__wrapper > form > input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 6px 10px;
+}
+
+.modal__wrapper > form > button {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #066FC0;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 0;
+    text-transform: uppercase;
+}
+
+
+.closeModal__button {
+   position: absolute;
+   top: 0;
+   right: 0;
+    cursor: pointer;
+    font-weight: bolder;
+    margin: 0 0 0 auto;
+    padding-right: 15px;
+    font-size: 22px;
+}
+
+.modal__wrapper > form > a {
+    font-size: 13px;
+    float: right;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.modal__wrapper > form > span {
+    font-size: 11px;
+}
+
+.modal__wrapper > span {
+    font-size: 11px;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.social__icons > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    background: #eee;
+    padding: 8px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.social__icons > span > img {
+    height: 23px;
+    width: 23px;
+}

@@ -1,0 +1,110 @@
+.main__oppsec {
+    width: 100%;
+    background-color: #F6F7FA;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main__oppsec > h1 {
+    text-align: center;
+    padding-top: 70px;
+    font-weight: 400;
+}
+
+.main__oppsec > p {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.opp__sec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.opp__grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #F6F7FA;
+    box-shadow: 0 3px 0 #066FC0;
+    background-color: #fff;
+    text-align: center;
+    margin: 20px;
+    padding: 30px 10px;
+    transition: 0.3s;
+}
+
+.oppimg__area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 20px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.opp__grid:nth-child(1) .oppimg__area {
+    background-image: url(../../../Assets/Images/Group\ 363.png);
+}
+
+.opp__grid:nth-child(2) .oppimg__area {
+    background-image: url(../../../Assets/Images/Group\ 363.png);
+}
+
+.opp__grid:nth-child(3) .oppimg__area {
+    background-image: url(../../../Assets/Images/Group\ 363.png);
+}
+
+.opptile__img > h2 {
+    color: #fff;
+    font-weight: 400;
+}
+
+.opp__text > h3 {
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.opp__text > p {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.main__oppsec > button {
+    background: #066FC0;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 40px;
+    margin-bottom: 30px;
+}
+
+
+
+@media (min-width:300px) and (max-width:499px) {
+
+    .main__oppsec > p {
+        padding: 0 20px;
+    }
+    .main__oppsec > button {
+        padding: 8px 20px;
+        
+    }
+
+} 

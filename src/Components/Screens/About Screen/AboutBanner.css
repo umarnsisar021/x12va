@@ -1,0 +1,23 @@
+.abtBanner {
+    background-image: url("../../../Assets/Images/about\ us\ banner.png");
+    background-size: cover;
+    background-position:center center ;
+    position: relative;
+    object-fit: cover;
+    height: 60vh;
+}
+.abt__content {
+    margin-left: 150px;
+    padding-top: 100px;
+    padding-bottom: 0px;
+    height: fit-content;
+    width: 550px;
+}
+.company__title {
+    font-weight: 400;
+    padding-bottom: 1.2rem;
+    color: #066FC0;
+}
+.company__desc {
+    padding-bottom: 1.2rem;
+}

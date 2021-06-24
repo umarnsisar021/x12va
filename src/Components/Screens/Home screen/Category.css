@@ -1,0 +1,31 @@
+.category__container {
+    width: 230px;
+    margin: 0 auto;
+}
+
+.category__img {
+    width: 230px;
+    height: 260px;
+}
+
+.category__container > p {
+    position: relative;
+    top: -40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width:990px) {
+
+}
+
+@media screen and (max-width:700px) {
+
+    
+}
+
+@media screen and (max-width:600px) { 
+
+}

@@ -1,0 +1,23 @@
+.workSec__banner {
+    background-image: url("../../../Assets/Images/WorkForUs\ banner.png");
+    background-size: cover;
+    background-position:center center ;
+    position: relative;
+    object-fit: cover;
+    height: 60vh;
+}
+.workSec__inner {
+    margin-left: 150px;
+    padding-top: 100px;
+    padding-bottom: 0px;
+    height: fit-content;
+    width: 550px;
+}
+.workSec__inner > h1 {
+    font-weight: 400;
+    padding-bottom: 1.2rem;
+    color: #066FC0;
+}
+.workSec__inner > p {
+    padding-bottom: 1.2rem;
+}

@@ -1,0 +1,52 @@
+.form__wrapperCont {
+    margin-top: 50px;
+}
+
+.form__wrapperCont > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__wrapperCont > form label {
+    font-weight: 600;
+    padding-bottom: 9px;
+}
+
+.form__wrapperCont > form input {
+    padding: 5px 10px;
+    border: 2px solid lightgray;
+    outline: none;
+    margin-bottom: 9px;
+}
+.form__wrapperCont > form input:focus {
+    border: 2px solid #066FC0;
+}
+
+.file__drag {
+    border: 2px dashed lightgray;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 2px;
+    outline: none;
+    transition: border .24s ease-in-out;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.FileDragblue__span {
+    color: #066FC0;
+}
+
+.file__drag p {
+    padding-bottom: 10px;
+}
+
+.file__drag button {
+    background-color: transparent;
+    border: 2px solid #066FC0;
+    outline: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}

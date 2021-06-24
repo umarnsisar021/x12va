@@ -1,0 +1,75 @@
+.help__wrapper {
+    background-color: #F6F7FA;
+}
+
+.help__inner {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.help__title {
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+.title__blue {
+    color: #066FC0 ;
+}
+.help__inner > p {
+    width: 80%;
+    padding-bottom: 20px;
+}
+.help__inner > label {
+    padding-bottom: 10px;
+}
+.help__inner > textarea {
+    height: 100px;
+    margin-bottom: 20px;
+    resize: none;
+    padding: 10px 20px;
+    border: 1px solid gray;
+}
+
+.helpFile__drag {
+    border: 2px dashed gray;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 2px;
+    outline: none;
+    transition: border .24s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.helpFile__drag > button {
+    border-radius: 5px;
+    border: 1px solid #066FC0;
+    padding: 5px 20px;
+    color: #066FC0;
+    background-color: transparent;
+    cursor: pointer;
+}
+.helpFile__drag > button:hover {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: #066FC0;
+    color: #fff;
+}
+
+.helpSubmit__btn > button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    background-color: #066FC0;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
