@@ -38,7 +38,7 @@ function App() {
             <Home/>
           </Route>
           <Route exact path="/experts" >
-            <Navbar 
+            <Navbar
               cName="navbar__color"
             />
             <Experts/>

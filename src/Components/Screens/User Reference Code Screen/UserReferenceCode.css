@@ -1,5 +1,6 @@
 .refc__wrapper {
-    background-color: #F6F7FA;   
+    height: 100%;
+    background-color: #F6F7FA;
 }
 .refc__inner {
     width: 80%;
