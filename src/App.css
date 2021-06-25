@@ -22,7 +22,7 @@
     border: 1px solid #066fc0;
     border-radius: 5px;
   }
-  button {
+  .btn-theme-default {
     background: #066fc0;
     padding: 10px 30px;
     color: white;
@@ -30,7 +30,7 @@
     border-radius: 5px;
     cursor: pointer;
   }
-    button:hover {
+  .btn-theme-default:hover {
     background:white;
     padding: 10px 30px;
     color: #066fc0;

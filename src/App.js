@@ -1,10 +1,9 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-
 // theme
 import './Components/Theme.css'
-
+import './Components/styles/spacing/index.css'
 
 // components
 import Navbar from './Components/Navbar'
