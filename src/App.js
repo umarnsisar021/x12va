@@ -1,6 +1,10 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+/// Redux
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 // theme
 import './Components/Theme.css'
 import './Components/styles/spacing/index.css'

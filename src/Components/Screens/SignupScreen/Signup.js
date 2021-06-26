@@ -8,6 +8,8 @@ import Flatpickr from "react-flatpickr";
 import Select from 'react-select'
 import { useForm, Controller } from "react-hook-form";
 import { AlertCircle } from 'react-feather';
+import useJwt from '../../Util';
+
 
 function Signup() {
     const options = [
@@ -15,8 +17,13 @@ function Signup() {
         { value: 'female', label: 'Female' },
     ]
     const { register, handleSubmit,control, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-
+    const onSubmit = data =>{
+        console.log(data)
+        useJwt.post('experts/get_data').then((res)=>{
+            console.log(res)
+        })
+    }
+   
     return (
         <div className="refc__wrapper">
             <EverySectionHeader
