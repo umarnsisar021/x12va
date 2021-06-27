@@ -108,7 +108,7 @@ import jwtDefaultConfig from './jwtDefaultConfig'
   }
 
   post (url, ...args) {
-    return axios.post(this.jwtConfig.host + url, ...args) 
+    return axios.post(this.jwtConfig.host + url, ...args)
   }
 }
 
