@@ -44,7 +44,20 @@
     border: 0;
     outline: none;
     padding: 17px 20px;
+    font-size: 16px;
+    border: 1px solid white;
+    margin-right: 5px;
+}
+.input__field:focus {
+    width: 78%;
+    border: 0;
+    outline: none;
+    padding: 17px 20px;
     font-size: 13px;
+    border: 1px solid #066fc0;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 5px;
 }
 
 .banner__button {

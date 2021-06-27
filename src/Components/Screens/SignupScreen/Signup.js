@@ -25,7 +25,7 @@ function Signup() {
         console.log(data)
         data.gender=data.gender.value;
         useJwt.post('clients/register_new_client',data).then((res)=>{
-            console.log(res)
+            //console.log(res)
             toast.success(res.data.message, {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -40,11 +40,9 @@ function Signup() {
             if (error.response) {
               // Request made and server responded
               const data = error.response.data
-              console.log(data)
-              console.log(error.response.status)
-              console.log(error.response.headers)
-            toast( data.message)
-
+            //   console.log(data)
+            //   console.log(error.response.status)
+            //   console.log(error.response.headers)
             toast.error(data.message, {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -136,7 +134,7 @@ function Signup() {
                     </div>
                 </form>
             </div>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     )
 }

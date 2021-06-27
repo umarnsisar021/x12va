@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 /// Redux
 import { Provider } from 'react-redux'
-import store from './redux/store'
+import {store} from './redux/store.js'
 
 // theme
 import './Components/Theme.css'
@@ -30,10 +30,12 @@ import ExpertResultFound from './Components/Screens/Experts Results Screen/Exper
 import CreditCardDetails from './Components/Screens/Credit Card Details Screen/CreditCardDetails';
 import UserReferenceCode from './Components/Screens/User Reference Code Screen/UserReferenceCode';
 import Signup from './Components/Screens/SignupScreen/Signup';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
+    <Provider store={store} >
     <div className="app">
       <BrowserRouter>
         <Switch>
@@ -146,6 +148,8 @@ function App() {
         <Footer/>
       </BrowserRouter>
     </div>
+    <ToastContainer />
+    </Provider>
   );
 }
 

@@ -8,9 +8,9 @@ const authReducer = (state = initialState, action) => {
     case 'LOGIN':
       return {
         ...state,
-        userData: action.data,
-        [action.config.storageTokenKeyName]: action[action.config.storageTokenKeyName],
-        [action.config.storageRefreshTokenKeyName]: action[action.config.storageRefreshTokenKeyName]
+        userData: action.payload,
+        // [action.config.storageTokenKeyName]: action[action.config.storageTokenKeyName],
+        // [action.config.storageRefreshTokenKeyName]: action[action.config.storageRefreshTokenKeyName]
       }
     case 'LOGOUT':
       const obj = { ...action }
@@ -20,5 +20,6 @@ const authReducer = (state = initialState, action) => {
       return state
   }
 }
+
 
 export default authReducer
