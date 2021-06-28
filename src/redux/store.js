@@ -1,16 +1,17 @@
 // ** Redux, Thunk & Root Reducer Imports
 import thunk from 'redux-thunk'
-import createDebounce from 'redux-debounced'
 import rootReducer from './reducers/rootReducer'
+import { persistStore,  } from 'redux-persist'
 import { createStore, applyMiddleware, compose } from 'redux'
-
+import storage from 'redux-persist/lib/storage'
 // ** init middleware
-const middleware = [thunk, createDebounce()]
+const persistConfig = {
+    key: 'root',
+    storage,
+  }
 
-// ** Dev Tools
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
-// ** Create store
-const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(...middleware)))
-
-export { store }
+  export default () => {
+    let store = createStore(rootReducer,applyMiddleware(thunk))
+    let persistor = persistStore(store);
+    return { store, persistor }
+  }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Login.css'
 import { Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form'
@@ -17,7 +17,9 @@ import FacebookLogin from 'react-facebook-login';
 
 function Login( props ) {
     /// Google Response
-    console.log(props.userData)
+    useEffect(()=>{
+       // console.log(props.userData)
+    })
     const responseGoogle = (response) => {
         let profile = response.profileObj;
         if(profile) {

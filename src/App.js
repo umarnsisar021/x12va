@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 /// Redux
 import { Provider } from 'react-redux'
-import {store} from './redux/store.js'
+import { PersistGate } from 'redux-persist/integration/react'
+import configureStore from './redux/store.js'
 
 // theme
 import './Components/Theme.css'
@@ -32,10 +33,11 @@ import UserReferenceCode from './Components/Screens/User Reference Code Screen/U
 import Signup from './Components/Screens/SignupScreen/Signup';
 import { ToastContainer } from 'react-toastify';
 
-
+const {store, persistor} = configureStore();
 function App() {
   return (
     <Provider store={store} >
+      <PersistGate loading={null} persistor={persistor}>
     <div className="app">
       <BrowserRouter>
         <Switch>
@@ -149,6 +151,7 @@ function App() {
       </BrowserRouter>
     </div>
     <ToastContainer />
+      </PersistGate>
     </Provider>
   );
 }

@@ -32,11 +32,15 @@
     width: 580px;
     background-color: #fff;
     margin-left: 150px;
-    display: flex;
+
     flex-direction: row;
     padding: 3px;
     border-radius: 5px;
     margin-top: 19px;
+}
+
+.search_container{
+    display: flex;
 }
 
 .input__field {
@@ -72,6 +76,23 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+.search_results {
+    width: 1005;
+}
+.search_results  .search_r_ul{
+   list-style: none;
+   margin-top: 2px;
+}
+.search_results  .search_r_ul li{
+    padding: 10px 20px;
+}
+.search_results  .search_r_ul li:hover{
+    background: #056fc0;
+    color: white;
+    border-radius: 5px;
+}
+
 
 @media (min-width:801px) and (max-width:990px){
 
