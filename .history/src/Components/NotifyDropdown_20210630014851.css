@@ -1,0 +1,95 @@
+.notifications__dd {
+    position: absolute;
+    display: none;
+    top: 48px;
+    right: 0;
+    background-color: #fff;
+    padding-top: 20px;
+    width: 350px;
+    max-height: 317px;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    border-radius: 3px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.125);
+}
+.notifications__dd::-webkit-scrollbar {
+    width: 12px;
+}
+.notifications__dd::-webkit-scrollbar-track {
+    background: lightgray;
+}
+.notifications__dd::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;      
+    border: 3px solid gray; 
+}
+
+.notifications__ul {
+    padding: 0;
+    margin: 0;
+}
+.notifications__ul h5 {
+    color: #000;
+    padding-left: 20px;
+}
+.notifications__dd:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 0;
+    border: 10px solid;
+    border-color:transparent transparent #fff transparent;
+}
+.notifications__dd li .notify__icon {
+    display: flex;
+}
+.notifications__dd li {
+    border-bottom: 1px solid #f1f2f4;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.notifications__dd li:hover {
+    background-color: lightgray;
+}
+.notifications__dd li .notify__icon .icon {
+    width: 40px;
+    height: 42px;
+}
+.notifications__dd li .notify__data {
+    margin: 0 15px;
+    width: 185px;
+}
+.notifications__dd li .notify__title {
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+.notifications__dd li .notifySub__title {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+    color: #000;
+}
+.notifications__dd li.show__all {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.notifications__dd li:last-child {
+    border-bottom: 0;
+}
+.notifications__dd li.show__all span {
+    font-weight: 700;
+    color: #3b80f9;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.notifications__dd li.show__all span:hover {
+    text-decoration: underline ;
+}
+

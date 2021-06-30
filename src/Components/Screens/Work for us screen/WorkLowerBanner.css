@@ -20,6 +20,10 @@
 }
 .lowerBanner__inner p {
     padding-bottom: 10px;
+    line-height: 30px;
+}
+.second__para {
+    margin-top: 25px;
 }
 .lowerBanner__inner button {
     border: none;

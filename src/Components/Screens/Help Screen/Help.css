@@ -21,6 +21,7 @@
 .help__inner > p {
     width: 80%;
     padding-bottom: 20px;
+    line-height: 30px;
 }
 .help__inner > label {
     padding-bottom: 10px;

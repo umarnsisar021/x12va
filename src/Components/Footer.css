@@ -2,11 +2,13 @@
     background-color: #fff;
     width: 100%;
     padding: 30px;
-    margin: 0 auto;
     text-align: center;
+    margin-top: auto;
 }
 
 .footer > p {
     font-size: 13px;
     line-height: 24px;
+    margin: 0;
+    padding: 0;
 }

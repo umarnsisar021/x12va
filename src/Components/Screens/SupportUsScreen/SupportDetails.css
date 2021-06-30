@@ -1,0 +1,32 @@
+.sp__detailsBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top:90px;
+    padding-bottom: 30px;
+}
+.spu__vector , .spu__details {
+    width: 50%;
+}
+.spu__vector {
+    height: fit-content;
+    position: relative;
+    padding-left: 15%;
+}
+.spu__vector img {
+    height: 300px;
+}
+.spu__details {
+    height: fit-content;
+    text-align: justify;
+    line-height: 30px;
+    padding-right: 10%;
+}
+.spu__details h1 {
+    color: #066fc0;
+    padding-bottom: 30px;
+    font-weight: 900;
+}
+.spu__details p {
+    padding-bottom: 10px;
+    font-size: 14px;
+}

@@ -39,7 +39,7 @@ function UserReferenceCode() {
                             <span>Enter Email Address</span>
                             <input type="email" placeholder="info@gmail.com" />
                         </div>
-                        <div className="rfcInput__box mt-3">
+                        <div className="rfcInput__box">
                             <span>Enter Reference Code</span>
                             <input type="text" placeholder="Male" />
                             <button>Submit</button>

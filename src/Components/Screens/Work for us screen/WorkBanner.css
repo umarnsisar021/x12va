@@ -11,7 +11,7 @@
     padding-top: 100px;
     padding-bottom: 0px;
     height: fit-content;
-    width: 550px;
+    width: 530px;
 }
 .workSec__inner > h1 {
     font-weight: 400;
@@ -20,4 +20,5 @@
 }
 .workSec__inner > p {
     padding-bottom: 1.2rem;
+    line-height: 30px;
 }

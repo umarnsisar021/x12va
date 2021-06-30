@@ -17,7 +17,7 @@ function Experts() {
     return (
         <div className="wrapper">
             <EverySectionHeader
-                title="Experts"
+                title="Meet our experts"
             />
             <ExpertGridRow
                 title="Subject Specialists"

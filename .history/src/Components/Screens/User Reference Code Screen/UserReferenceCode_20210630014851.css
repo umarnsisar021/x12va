@@ -1,0 +1,57 @@
+.refc__wrapper {
+    background-color: #F6F7FA;   
+}
+.refc__inner {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px -1px 5px 1px #f1f1f1;
+}
+.rfcUser__details {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.rfcInput__box {
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 20px;
+}
+.rfcInput__box input {
+    padding: 4px 10px;
+    width: 100%;
+    border: 2px solid gray;
+}
+.rfcInput__box input:focus {
+    border: 2px solid #066fc0;
+}
+.rfcInput__box span {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.rfcInput__box button {
+    border: none;
+    outline: none;
+    background-color: #066fc0;
+    color: #fff;
+    padding: 5px 30px;
+    margin-top: 30px;
+}
+
+@media (max-width:584px) {
+    .refc__wrapper {
+        max-width: 100%;
+    }
+    .rfcUser__details {
+        justify-content: none;
+    }
+    .rfcInput__box {
+        width: 100%;
+    }
+}

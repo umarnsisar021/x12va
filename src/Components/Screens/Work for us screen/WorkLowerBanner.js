@@ -15,13 +15,13 @@ function WorkLowerBanner() {
                     through this method, you’ll need to follow 
                     these steps
                 </p>
-                <div className="bullets pb-3">
+                <div className="bullets">
                     <div><span>1</span>Scan both sides of your id card</div>
                     <div><span>2</span>Scan transcripts for your qualifications</div>
                     <div><span>3</span>Answer few questions and submit your application</div>
                 </div>
 
-                <p>
+                <p className="second__para">
                     Next step is to relax. We will carefully 
                     review documents you submitted. If you are 
                     what we are looking for, we will get 

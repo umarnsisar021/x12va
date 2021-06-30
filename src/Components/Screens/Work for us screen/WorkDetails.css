@@ -14,6 +14,9 @@
 .colored__head {
     color: #066fc0;
 }
+.workFurther__details > p {
+    line-height: 30px;
+}
 .workFurther__details > p , h4 {
     padding-bottom: 10px;
 }
