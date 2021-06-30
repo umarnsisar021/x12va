@@ -28,8 +28,3 @@ tbody, td, tfoot, th, thead, tr {
     border-style: initial;
     border-width: 0;
 }
-
-.table>tbody>tr {
-   
-    border-bottom: 1px solid #ECECEC;
-}

@@ -9,7 +9,6 @@
 .table>thead {
    
     background: #F4FAFF !important;
-    border-bottom: 1px solid #DEDEDE;
 }
 /* Table */
 .table>thead>tr {
@@ -27,9 +26,4 @@ tbody, td, tfoot, th, thead, tr {
     border-color: inherit;
     border-style: initial;
     border-width: 0;
-}
-
-.table>tbody>tr {
-   
-    border-bottom: 1px solid #ECECEC;
 }

@@ -41,7 +41,7 @@ const avatarGroupData4 = [
 
 const TableBorderless = () => {
   return (
-    <Table  hover className="order__table">
+    <Table  striped hover className="order__table">
       <thead>
         <tr>
           <th>ORDER NUMBER</th>

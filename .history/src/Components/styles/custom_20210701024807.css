@@ -1,0 +1,13 @@
+.slick-initialized .slick-slide{
+    height: 270px;
+}
+
+.slick-initialized .slick-slide div{
+    height: 100%;
+}
+/* Table */
+.table>thead {
+    font-size: 13px !important;
+    padding: 15px 20px;
+    background: #F4FAFF !important;
+}

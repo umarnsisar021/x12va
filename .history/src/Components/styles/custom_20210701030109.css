@@ -29,7 +29,7 @@ tbody, td, tfoot, th, thead, tr {
     border-width: 0;
 }
 
-.table>tbody>tr {
+.table>tbody>tr>{
    
     border-bottom: 1px solid #ECECEC;
 }

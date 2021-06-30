@@ -29,7 +29,9 @@ tbody, td, tfoot, th, thead, tr {
     border-width: 0;
 }
 
-.table>tbody>tr {
+.table>tbody>tr>th {
    
-    border-bottom: 1px solid #ECECEC;
+    font-size: 13px !important;
+    padding: 15px 20px;
+    font-weight: 500;
 }
