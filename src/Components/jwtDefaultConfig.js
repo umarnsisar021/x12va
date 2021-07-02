@@ -1,7 +1,8 @@
 // ** Auth Endpoints
 
-const api_base_url = 'http://192.168.10.3:8000/api/web/'
-//const api_base_url = 'http://api.x12va.rsassociates.pk/api/'
+//const api_base_url = 'http://192.168.10.3:8000/api/web/'
+//const api_base_url = 'http://192.168.10.3:8000/api/web/'
+const api_base_url = 'https://salalkhan.com/demo/x12va/api/web/'
 
 export default {
   host: api_base_url,

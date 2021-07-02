@@ -1,0 +1,20 @@
+.eppd__details {
+    height: auto;
+    width: 73%;
+    padding: 20px 40px;
+}
+.tested__skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+.eppd__details h3 {
+    color: #066fc0;
+    padding-bottom:11px ;
+}
+.eppd__details p {
+    margin-top:15px ;
+    font-size: 13px;
+    padding-bottom: 15px;
+}

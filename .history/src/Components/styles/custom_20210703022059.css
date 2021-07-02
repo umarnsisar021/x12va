@@ -1,0 +1,39 @@
+.slick-initialized .slick-slide{
+    height: 318px;
+}
+
+.slick-initialized .slick-slide div{
+    height: 100%;
+}
+/* Table */
+.table>thead {
+   
+    background: #F4FAFF !important;
+    border-bottom: 1px solid #DEDEDE;
+}
+/* Table */
+.table>thead>tr {
+   
+    background: #F4FAFF !important;
+}
+.table>thead>tr>th {
+   
+    font-size: 13px !important;
+    padding: 15px 20px;
+    font-weight: 500;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: initial;
+    border-width: 0;
+}
+
+.table>tbody>tr {
+   
+    border-bottom: 1px solid #ECECEC;
+}
+/* Tostyfy */
+.Toastify__toast--error{
+    
+}
