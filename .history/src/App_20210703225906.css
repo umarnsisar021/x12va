@@ -1,0 +1,81 @@
+@font-face {
+    font-family: poppins;
+    src: url(Assets/Fonts/Poppins-Regular.ttf);
+
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: poppins;
+  }
+  input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    font-size: 14px !important;
+  }
+  input:focus{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #066fc0;
+    border-radius: 5px;
+  }
+  .btn-theme-default {
+    background: #066fc0;
+    padding: 10px 30px;
+    color: white;
+    border: 1px solid #066fc0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-theme-default:hover {
+    background:white;
+    padding: 10px 30px;
+    color: #066fc0;
+    border: 1px solid #066fc0;
+  }
+  html, body {
+    height: 100%;
+  }
+  #root , .app {
+    height: 100%;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .mt-2 {
+    margin-top: 20px;
+  }
+
+  /* buttons  */
+  .buttonType__one {
+    color: #fff;
+    background-color: #066fc0;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px 30px;
+    cursor: pointer;
+  }
+
+/* containers  */
+.wrapper__box {
+  background-color: #F6F7FA;   
+}
+.wrapper__innerBox {
+  width: 80%;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px -1px 5px 1px #f1f1f1;
+}
