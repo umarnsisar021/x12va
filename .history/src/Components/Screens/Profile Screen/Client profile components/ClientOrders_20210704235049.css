@@ -1,0 +1,17 @@
+.tabs__nav{
+    background-color: white !important;
+    padding-left: 130px;
+    padding: 10px 0px 0px 130px;
+    border-top: 1px solid #DEDEDE;
+    box-shadow: 4px 4px 5px 0 #e2e2e2;
+}
+.tabs__link{
+    border:none !important;
+    background-color: white !important;
+}
+.tabs__link.active {
+    color: #066fc0 !important;
+    border-bottom: 2px solid #066fc0 !important;
+    background-color: transparent !important;
+    padding: 0px 20px 15px 0px !important;
+}
