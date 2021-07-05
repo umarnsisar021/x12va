@@ -64,7 +64,7 @@ function Signup() {
           })
     }
 
-   
+
     return (
         <div className="refc__wrapper">
             <EverySectionHeader

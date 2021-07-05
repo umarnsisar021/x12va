@@ -9,7 +9,7 @@ function UserProfileDropdown(props) {
         <div className="profile__dd" style={{ display: props.dropUser ? "block" : "none" }}>
             <ul className="profile__ul">
                 <li className="profile__li">
-                  
+
                     {
                         props.account_mode == 'client' ?
                         <Link to="/cprofile?self=true" >
@@ -22,7 +22,7 @@ function UserProfileDropdown(props) {
                             Profile
                         </Link>
                     }
-                   
+
                 </li>
                 <li className="profile__li">
                     <a href="">
@@ -31,7 +31,7 @@ function UserProfileDropdown(props) {
                     </a>
                 </li>
                 {
-                    props.userData.is_seller == 1 ? 
+                    props.userData.is_seller == 1 ?
                         props.account_mode == 'client' ?
                         <li className="profile__li">
                             <a href="" onClick={()=> props.switch('expert')}>
@@ -43,7 +43,7 @@ function UserProfileDropdown(props) {
                                 <ExitToAppIcon />
                                 Switch to Client
                             </a>
-                        </li> 
+                        </li>
                     :
                     ""
                 }
@@ -69,8 +69,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 function mapStateToProps(state) {
     const { auth } = state
-    return { userData : auth.userData, 
-            account_mode : auth.account_mode        
+    return { userData : auth.userData,
+            account_mode : auth.account_mode
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(UserProfileDropdown)

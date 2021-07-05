@@ -92,15 +92,15 @@
 .navbar__right .icon__wrap {
     cursor: pointer;
 }
-.navbar__right .inbox , 
+.navbar__right .inbox ,
 .navbar__right .notifications {
     margin-right: 25px;
 }
-.navbar__right .inbox .icon__wrap , 
+.navbar__right .inbox .icon__wrap ,
 .navbar__right .notifications .icon__wrap {
     /* font-size: 28px; */
 }
-.navbar__right .inbox , 
+.navbar__right .inbox ,
 .navbar__right .notifications,
 .navbar__right .userProfile__auth {
     position: relative;
@@ -113,6 +113,7 @@
 
 .userProfile__auth .icon__wrap img {
     width: 40px;
+    border-radius: 7px;
 }
 .userProfile__auth .icon__wrap span {
     margin-left: 10px;
@@ -176,7 +177,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     .close__menu  {
         display: block;
         position: absolute;
@@ -200,12 +201,12 @@
     .logo__container {
         margin-left: 20px;
     }
-    
+
     .nav__content > button {
         margin-top: 10px;
     }
 
-}    
+}
 
 @media (max-width: 1300px) {
 

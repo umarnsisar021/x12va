@@ -1,0 +1,30 @@
+.proposals__table {
+    width: 100%;
+}
+.proposals__table th {
+    text-align: left;
+}
+.proposals__table th , .proposals__table td{
+    padding:20px 20px;
+}
+.proposals__table th {
+    font-size: 13px !important;    
+}
+.proposals__table td {
+    font-size: 12px !important;
+}
+.proposals__table td button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #eee;
+    color: #000;
+    font-weight: 500;
+    border-radius: 3px;
+}
+.proposals__table td button:hover {
+    background-color: #066fc0;
+    transition: 0.5s;
+    color: #fff;
+}

@@ -35,9 +35,12 @@ import { ToastContainer } from 'react-toastify';
 import Congratulations from './Components/Screens/CongratulationsScreen/Congratulations';
 import SupportUs from './Components/Screens/SupportUsScreen/SupportUs';
 import SendProposal from './Components/Screens/PropossalScreen/SendProposal'
+import Proposals from './Components/Screens/PropossalScreen/Proposals'
+import ViewProposal from './Components/Screens/PropossalScreen/ViewProposal'
 import ExpertPublicProfile from './Components/Screens/Profile Screen/ExpertPublicProfile'
 import TaskAddedCongratulation from './Components/Screens/Experts Results Screen/OrderPlaced/Congratulations'
 import  ClientOrders from './Components/Screens/Profile Screen/Client profile components/ClientOrders'
+
 /// Custom css
 import './Components/styles/custom.css'
 const {store, persistor} = configureStore();
@@ -46,10 +49,10 @@ function App() {
     <Provider store={store} >
       <PersistGate loading={null} persistor={persistor}>
     <div className="app">
-    
+
       <BrowserRouter>
         <Switch>
-          
+
           <Route path="/" exact>
             <Home/>
           </Route>
@@ -167,25 +170,43 @@ function App() {
             />
             <SupportUs/>
           </Route>
-         
+
           <Route path="/sendproposal" exact>
             <Navbar
               cName="navbar__color"
             />
             <SendProposal/>
-          </Route>        
+          </Route>
           <Route path="/taskplaced/:task_id" exact>
             <Navbar
               cName="navbar__color"
             />
             <TaskAddedCongratulation/>
-          </Route>       
+          </Route>
           <Route path="/orders" exact>
             <Navbar
               cName="navbar__color"
             />
             <ClientOrders/>
-          </Route>       
+          </Route>
+              <Route path="/sendproposal" exact>
+                <Navbar
+                  cName="navbar__color"
+                />
+                <SendProposal />
+              </Route>
+              <Route path="/proposals" exact>
+                <Navbar
+                  cName="navbar__color"
+                />
+                <Proposals />
+              </Route>
+              <Route path="/proposal">
+                <Navbar
+                  cName="navbar__color"
+                />
+                <ViewProposal />
+              </Route>
            </Switch>
         <Footer/>
       </BrowserRouter>

@@ -7,6 +7,7 @@ import UserProfileDropdown from './UserProfileDropdown'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 import logo from '../Assets/Images/Group 143.png'
+import default_profile from '../Assets/Images/default-profile.png'
 import signinIcon from '../Assets/Images/sign in icon.png'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
@@ -22,7 +23,7 @@ import {connect} from 'react-redux';
 import { propTypes } from 'react-bootstrap/esm/Image'
 
 function Navbar(props) {
-    
+
     const [show, handleShow] = useState(false);
 
     const transitionNavbar= () => {
@@ -35,11 +36,11 @@ function Navbar(props) {
     };
     useEffect(() => {
         window.addEventListener("scroll",transitionNavbar);
-        return () => window.removeEventListener("scroll", transitionNavbar); 
+        return () => window.removeEventListener("scroll", transitionNavbar);
     }, []);
 
     const [open, setOpen] = useState(false);
-    
+
     const [modalShow, setModalShow] = useState(false);
     const [dropShow, setDropShow] = useState(false);
     const handleDropToggle = () => {
@@ -93,7 +94,7 @@ function Navbar(props) {
                 <NavLink to="/profile" className="nav__link"><span>Support us</span></NavLink>
 
                 {
-                    Object.keys(props.userData).length == 0 ? 
+                    Object.keys(props.userData).length == 0 ?
                     <>
                         <span className="nav__link" onClick={()=> setModalShow(true)} >
                             <img src={signinIcon} className="signin__icon" />Sign in
@@ -102,12 +103,12 @@ function Navbar(props) {
                     </>
                     : ""
                 }
-                
-                
+
+
                 <div className="close__menu" onClick={()=> setOpen(false)}><CloseIcon/></div>
 
                 {
-                    Object.keys(props.userData).length > 0 ? 
+                    Object.keys(props.userData).length > 0 ?
                     <div className="navbar__right">
                         <div className="inbox">
                             <div className="icon__wrap" onClick={handleInboxToggle}>
@@ -126,7 +127,7 @@ function Navbar(props) {
                                 <span style={{position:'absolute',right:'0px',top:'-4px'}}>
                                     <FiberManualRecordIcon style={{color:'orange',fontSize: '12px'}} />
                                 </span>
-                                
+
                             </div>
                             <NotifyDropdown
                                 dropShow={dropShow}
@@ -134,20 +135,22 @@ function Navbar(props) {
                         </div>
                         <div className="userProfile__auth">
                             <div className="icon__wrap" onClick={handleUserProfToggle}>
-                                <img src={userAvatar} alt="" />
+                                {
+                                    <img src={props.userData.avatar ? props.userData.avatar : default_profile} alt="" />
+                                }
                                 <span>
-                                    <img src={dropIcon}  alt="" />
+                                    <img src={dropIcon} alt="" />
                                 </span>
-                                
+
                             </div>
                             <UserProfileDropdown
                                 dropUser={dropUser}
                             />
                         </div>
                     </div> : ""
-                    
+
                 }
-                
+
                     <div className="close__menu" onClick={() => setOpen(false)}><CloseIcon /></div>
             </div>
         </div>
@@ -155,7 +158,7 @@ function Navbar(props) {
             show={modalShow}
             onHide={()=> setModalShow(false)}
         />
-        
+
         </>
     )
 }
