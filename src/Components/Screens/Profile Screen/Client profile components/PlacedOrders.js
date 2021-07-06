@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './ClientOrders.css'
 import useJwt from '../../../Util';
 import {Link} from 'react-router-dom';
-/// Redux 
+/// Redux
 import { connect } from 'react-redux';
 import ContentLoader from '../../../ContentLoader'
 const PlacedOrders = (props) => {
@@ -19,7 +19,7 @@ const PlacedOrders = (props) => {
   },[])
   if(tableData){
     return (
-    
+
         <React.Fragment>
            <div className="cp__section" style={{display: 'block',background:'#eee'}}>
                 <h5 style={{paddingLeft:'0',marginTop:'40px'}}>Placed Orders
@@ -44,8 +44,8 @@ const PlacedOrders = (props) => {
                                     <tr>
                                         <td style={{verticalAlign:'middle'}}>{row.id}</td>
                                         <td>
-                                            <Avatar 
-                                            color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])} 
+                                            <Avatar
+                                            color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
                                             name="Finance" round={true} size={32}  textSizeRatio={2}
                                             />
                                             <span className='align-middle font-weight-bold pl-2'>{row.skill_name}</span>
@@ -53,7 +53,7 @@ const PlacedOrders = (props) => {
                                     </tr>
                                 )
                             })
-                            
+
                             :
                             <tr>
                                 <td className="p-4" style={{verticalAlign:'middle',textAlign:'center'}} colSpan={5}>
@@ -65,13 +65,13 @@ const PlacedOrders = (props) => {
                 </Table>
             </div>
         </React.Fragment>
-     
+
       )
   }
   else{
       return <ContentLoader />
   }
- 
+
 }
 
 

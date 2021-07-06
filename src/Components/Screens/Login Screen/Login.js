@@ -19,7 +19,6 @@ import { FormatListBulleted } from '@material-ui/icons';
 
 function Login( props ) {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
- 
     const [modal_2 , setModal_2] = React.useState(false);
     const [S_R_username , setS_R_username] = React.useState(false);
     const [S_R_password , setS_R_password] = React.useState(false);
@@ -37,7 +36,7 @@ function Login( props ) {
     const responseGoogle = (response) => {
         let profile = response.profileObj;
         if(profile) {
-    
+
             let data ={
                 type: 1, /// Google login
                 first_name :profile.givenName,
@@ -67,7 +66,7 @@ function Login( props ) {
                         progress: undefined,
                         });
                 }
-               
+
                     //reset();
             }).catch(function (error) {
                 if (error.response) {
@@ -82,7 +81,7 @@ function Login( props ) {
                     draggable: true,
                     progress: undefined,
                     });
-    
+
                 } else if (error.request) {
                   // The request was made but no response was received
                   console.log(error.request)
@@ -96,7 +95,7 @@ function Login( props ) {
         }
 
       }
-    
+
     /// Facebook Response
     const responseFacebook = (response) => {
         console.log(response);
@@ -106,7 +105,7 @@ function Login( props ) {
         data['token'] = token;
         if(data){
             useJwt.post('clients/set_username_or_password',data).then((res) => {
-                   
+
                     props.login(res.data);
                     setModal_2(false)
                     toast.success(res.data.message, {
@@ -118,7 +117,7 @@ function Login( props ) {
                         draggable: true,
                         progress: undefined,
                         });
-  
+
             }).catch(function (error) {
                 if (error.response) {
                   // Request made and server responded
@@ -132,7 +131,7 @@ function Login( props ) {
                     draggable: true,
                     progress: undefined,
                     });
-    
+
                 } else if (error.request) {
                   // The request was made but no response was received
                   console.log(error.request)
@@ -173,8 +172,8 @@ function Login( props ) {
                             progress: undefined,
                         });
                    }
-                   
-  
+
+
             }).catch(function (error) {
                 if (error.response) {
                   // Request made and server responded
@@ -188,7 +187,7 @@ function Login( props ) {
                     draggable: true,
                     progress: undefined,
                     });
-    
+
                 } else if (error.request) {
                   // The request was made but no response was received
                   console.log(error.request)
@@ -205,8 +204,8 @@ function Login( props ) {
         <>
         <Modal
         {...props}
-        dialogClassName="modal__size modal modal-open 
-            modal-dialog modal.fade modal-dialog-scrollable 
+        dialogClassName="modal__size modal modal-open
+            modal-dialog modal.fade modal-dialog-scrollable
             modal-dialog-centered"
         centered
         >
@@ -223,14 +222,14 @@ function Login( props ) {
                         <span>or login with</span>
                     </form>
                     <div className="social__icons">
-                    
+
                             <GoogleLogin
                                 clientId={'37103895504-563d6facsgksu796bmd8u3902smevt8k.apps.googleusercontent.com'}
                                 onSuccess={responseGoogle}
                                 onFailure={responseGoogle}
                                 icon={false}
                                 cookiePolicy={'single_host_origin'}
-                                
+
                                 render={(renderProps)=>
                                 <span onClick={renderProps.onClick}><img  src={icon1} alt="" /></span>}
                                 style={{backgroundColor:'red',display:'none'}}
@@ -240,29 +239,29 @@ function Login( props ) {
                             <FacebookLogin
                                 appId="1088597931155576"
                                 autoLoad={false}
-                            
+
                                 fields="name,email,picture"
                                 //onClick={componentClicked}
                                 callback={responseFacebook}
                                 tag={(renderProps)=><img style={{width:'23px'}} onClick={renderProps.onClick} src={icon2} alt="" />}
-            
+
                             >
                             </FacebookLogin>
                         </span>
                         <span><img src={icon3} alt="" /></span>
                     </div>
                     <span>Don’t have an account? <Link to="/signup" onClick={props.onHide} >Create Account</Link></span>
-                    
+
                 </div>
             </Modal.Body>
         </Modal>
 
         {/* For new user */}
         <Modal
-        
+
         show={modal_2}
-        dialogClassName="modal__size modal modal-open 
-            modal-dialog modal.fade modal-dialog-scrollable 
+        dialogClassName="modal__size modal modal-open
+            modal-dialog modal.fade modal-dialog-scrollable
             modal-dialog-centered"
         centered
         >
@@ -276,14 +275,14 @@ function Login( props ) {
                         <p style={{textAlign: 'initial',fontSize:'12px'}}>8 characters or longer. Combine upper and lowercase letters and numbers.</p>
                         <button type="submit">Login</button><br/>
                     </form>
-                  
+
                     <span>Don’t have an account? <a href="#" >Create Account</a></span>
-                    
+
                 </div>
             </Modal.Body>
         </Modal>
         </>
-        
+
     )
 }
 

@@ -16,8 +16,8 @@ async function getBase64(file) {
     return  new Promise((resolve, reject) => {
         var reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onload = function() { 
-            resolve(reader.result); 
+        reader.onload = function() {
+            resolve(reader.result);
         };
     })
  }
@@ -29,17 +29,14 @@ function ExpertResult(props) {
     React.useEffect(()=>{
         setTimeout(()=>{
             useJwt.post("find_total_experts",{skill_id:skill_id}).then((res)=>{
-                if(res.data.records) {
-                    console.log(res)
                     setExpertsCount(res.data.records)
-                }
-            })
-        },[1500])
-      
+            },1500)
+        },[])
+
     },[skill_id])
-   
-    
-    const { acceptedFiles, 
+
+
+    const { acceptedFiles,
         getRootProps,
         getInputProps,
         open
@@ -73,7 +70,7 @@ function ExpertResult(props) {
                     draggable: true,
                     progress: undefined,
                     });
-    
+
                 } else if (error.request) {
                   // The request was made but no response was received
                   console.log(error.request)
@@ -96,20 +93,20 @@ function ExpertResult(props) {
                 progress: undefined,
             });
         }
-      
-    };
-   
 
-    if(expertsCount){
+    };
+
+
+    if (expertsCount > 0 || expertsCount === 0){
         return (
-            
+
             <div className="er__wrapper">
-              
+
                         <Route path="/congratulations" exact>
-    
+
                             <Congratulations/>
                         </Route>
-         
+
                 <EverySectionHeader
                     title="Expert Results"
                 />
@@ -117,18 +114,18 @@ function ExpertResult(props) {
                 <div className="er__inner">
                     <h4><span>{expertsCount} experts found </span> according to your requirement</h4>
                     <div className="er__detailsBox">
-                       
+
                         <div className="details__inner">
-                            
+
                             <p className="input-label">Describe Your task and upload all relevant documents</p>
                             <input type="text"
-                                defaultValue="" {...register("description",{required:true})} 
+                                defaultValue="" {...register("description",{required:true})}
                                 placeholder="Description of your task"
                             />
                              {errors.description && <span className="input-error">This field is required.</span>}
                             <p className="input-label">Enter in how many days you need work.</p>
                             <input type="number"
-                                defaultValue="" {...register("days",{required:true})} 
+                                defaultValue="" {...register("days",{required:true})}
                                 placeholder="Enter days"
                             />
                              {errors.days && <span className="input-error">This field is required.</span>}
@@ -143,14 +140,14 @@ function ExpertResult(props) {
                                 </button>
                                 {/* {files && <span className="input-error">Please select the file.</span>} */}
                             </div>
-                            
+
                         </div>
                         <div className="OrImgIcon"></div>
-                      
+
                         <div className="mt-4 mb-2">
                             <button type="submit" className="btn-theme-default">Next</button>
                         </div>
-                 
+
                     </div>
                     <div className="er__furtherDetails">
                         <div className="er__fLeft">
@@ -183,7 +180,7 @@ const mapDispatchToProps = (dispatch) => {
 function mapStateToProps(state) {
     const { auth } = state
     return { userData : auth.userData,
-            sessionToken : auth.sessionToken   
+            sessionToken : auth.sessionToken
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(ExpertResult)

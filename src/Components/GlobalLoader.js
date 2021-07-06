@@ -2,7 +2,7 @@ import React from 'react'
 import Loader from "react-loader-spinner";
 const GlobalLoader = (props)=>{
     return (
-        <div id="global-loader">
+        <div id={props.type ? 'global-loader-2' : 'global-loader'}>
                 <div>
                     <Loader
                         type="MutatingDots"
@@ -16,7 +16,7 @@ const GlobalLoader = (props)=>{
                     }
                 </div>
 
-        </div> 
+        </div>
     )
 }
 export default GlobalLoader

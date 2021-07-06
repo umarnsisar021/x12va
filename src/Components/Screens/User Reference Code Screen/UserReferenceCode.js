@@ -42,7 +42,7 @@ function UserReferenceCode() {
                         <div className="rfcInput__box">
                             <span>Enter Reference Code</span>
                             <input type="text" placeholder="Male" />
-                            <button>Submit</button>
+                            <button className="btn-theme-default mt-4">Submit</button>
                         </div>
                     </div>
                 </form>
