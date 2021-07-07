@@ -1,0 +1,41 @@
+.work__lowerBanner {
+    background: url("../../../Assets/Images/WorkForUS\ lower\ banner.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    object-fit: cover;
+    height: auto;
+    display: inline-block;
+    padding: 70px 0;
+}
+.lowerBanner__inner {
+    /* //position: absolute; */
+    /* top: 0; */
+    left: 50%;
+    width: 56%;
+    float: right;
+    padding-right: 130px;
+}
+.lowerBanner__inner h1 {
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+.lowerBanner__inner p {
+    padding-bottom: 10px;
+    line-height: 30px;
+}
+.second__para {
+    margin-top: 25px;
+}
+.lowerBanner__inner button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #066fc0;
+    padding: 10px 40px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
