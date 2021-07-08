@@ -10,10 +10,8 @@ import Flatpickr from "react-flatpickr";
 import InputError from "@components/InputError";
 import { useHistory } from 'react-router'
 import useJwt from '@utils'
-import { toast } from 'react-toastify'
 
 function UserReferenceCode(props) {
-
     const history = useHistory();
     const { register, handleSubmit,control, watch, formState: { errors } ,reset} = useForm();
     const genderOptions = [
@@ -36,29 +34,20 @@ function UserReferenceCode(props) {
     const CustomInput = ({ value, defaultValue, inputRef, ...props }) => {
         return <input {...props} defaultValue={defaultValue} ref={inputRef} />;
       };
-    
+      {
+      d_o_b: ["2016-12-31T19:00:00.000Z"]
+      email: "umarnisar021@gmail.com"
+      first_name: "UMAR"
+      gender: {value: "male", label: "Male"}
+      last_name: "NISAR"
+      middle_name: ""
+      reference_code: "321"
+      token: "38196080c443507a6169cbac3297a655a6f09e76493efcfa15cf0f224c20b066d11f12ae4a12df5c3c04834d8b144b9e1e25e8d601fadb75c3ceb7e2fbcca9a1"}
       const HandleOnSubmit = (data) => {
-        let d_o_b = new Date(data.d_o_b)
-        data.d_o_b = `${d_o_b.getFullYear()}-${d_o_b.getMonth() + 1}-${d_o_b.getDate()}`
         data["token"] = props.sessionToken;
         data["middle_name"] = '';
-        data["gender"] = data.gender.value;
         useJwt.post('experts/register_as_a_reference_code',data).then((res)=>{
             console.log(res)
-            if(res.data.status !== 400){
-                
-            }
-            else{
-                toast.error(res.data.message, {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
-            }
         })
       };
 
@@ -108,9 +97,8 @@ function UserReferenceCode(props) {
                                 <span>Enter Reference Code</span>
                                 <input type="text"   defaultValue={""} {...register("reference_code",{required:true})}  placeholder="Reference Code" />
                                 {errors.gender && <InputError text="This field is required"/>}
-                               
+                                <button type="submit" className="btn-theme-default mt-4">Submit</button>
                             </div>
-                            <button type="submit" className="btn-theme-default mt-4">Submit</button>
                         </div>
                     </form>
                 </div>

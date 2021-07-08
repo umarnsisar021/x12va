@@ -9,11 +9,8 @@ import { AlertCircle } from 'react-feather';
 import Flatpickr from "react-flatpickr";
 import InputError from "@components/InputError";
 import { useHistory } from 'react-router'
-import useJwt from '@utils'
-import { toast } from 'react-toastify'
 
 function UserReferenceCode(props) {
-
     const history = useHistory();
     const { register, handleSubmit,control, watch, formState: { errors } ,reset} = useForm();
     const genderOptions = [
@@ -38,28 +35,7 @@ function UserReferenceCode(props) {
       };
     
       const HandleOnSubmit = (data) => {
-        let d_o_b = new Date(data.d_o_b)
-        data.d_o_b = `${d_o_b.getFullYear()}-${d_o_b.getMonth() + 1}-${d_o_b.getDate()}`
-        data["token"] = props.sessionToken;
-        data["middle_name"] = '';
-        data["gender"] = data.gender.value;
-        useJwt.post('experts/register_as_a_reference_code',data).then((res)=>{
-            console.log(res)
-            if(res.data.status !== 400){
-                
-            }
-            else{
-                toast.error(res.data.message, {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
-            }
-        })
+        console.log(data);
       };
 
 
@@ -74,11 +50,11 @@ function UserReferenceCode(props) {
                         <div className="rfcUser__details">
                             <div className="rfcInput__box">
                                 <span>First Name</span>
-                                <input type="text" value={props.userData.first_name} defaultValue={props.userData.first_name} {...register("first_name",{required:true})} placeholder="John Doe" readOnly={true} />
+                                <input type="text" value={props.userData.first_name} defaultValue={""} {...register("reference_code",{required:true})} placeholder="John Doe" readOnly={true} />
                             </div>
                             <div className="rfcInput__box">
                                 <span>Last Name</span>
-                                <input type="text" value={props.userData.last_name} defaultValue={props.userData.last_name} {...register("last_name",{required:true})} placeholder="John Doe" readOnly={true} />
+                                <input type="text" value={props.userData.last_name} placeholder="John Doe" readOnly={true} />
                             </div>
                             <div className="rfcInput__box">
                                 <span>Date of birth</span>
@@ -102,15 +78,15 @@ function UserReferenceCode(props) {
                             </div>
                             <div className="rfcInput__box">
                                 <span>Enter Email Address</span>
+
                                 <input type="email"  placeholder="info@gmail.com"  defaultValue={props.userData.email} {...register("email",{required:true})}  readOnly={true}/>
                             </div>
                             <div className="rfcInput__box">
                                 <span>Enter Reference Code</span>
                                 <input type="text"   defaultValue={""} {...register("reference_code",{required:true})}  placeholder="Reference Code" />
                                 {errors.gender && <InputError text="This field is required"/>}
-                               
+                                <button type="submit" className="btn-theme-default mt-4">Submit</button>
                             </div>
-                            <button type="submit" className="btn-theme-default mt-4">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -124,6 +100,6 @@ function UserReferenceCode(props) {
 }
 function mapStateToProps(state) {
     const { auth } = state
-    return { userData : auth.userData,sessionToken : auth.sessionToken }
+    return { userData : auth.userData }
   }
 export default connect(mapStateToProps)(UserReferenceCode)

@@ -10,10 +10,8 @@ import Flatpickr from "react-flatpickr";
 import InputError from "@components/InputError";
 import { useHistory } from 'react-router'
 import useJwt from '@utils'
-import { toast } from 'react-toastify'
 
 function UserReferenceCode(props) {
-
     const history = useHistory();
     const { register, handleSubmit,control, watch, formState: { errors } ,reset} = useForm();
     const genderOptions = [
@@ -44,20 +42,11 @@ function UserReferenceCode(props) {
         data["middle_name"] = '';
         data["gender"] = data.gender.value;
         useJwt.post('experts/register_as_a_reference_code',data).then((res)=>{
-            console.log(res)
-            if(res.data.status !== 400){
-                
+            if(res){
+
             }
             else{
-                toast.error(res.data.message, {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
+                alert("Already")
             }
         })
       };
