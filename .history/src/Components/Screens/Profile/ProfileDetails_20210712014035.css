@@ -1,0 +1,147 @@
+.profile__details {
+    height: auto;
+    width: 73%;
+    padding: 30px 40px;
+}
+
+.pu__details {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.pu__details > h1 {
+    text-align: left;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.pu__details > span {
+    padding-left: 30px;
+}
+
+.pu__details > span > img  {
+    height: 17px;
+    margin-top: 7px;
+}
+
+.bio__exp {
+    font-size: 14px;
+}
+
+.blue__heading {
+    color: #066FC0;
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.info {
+    text-align: left;
+    padding-right: 70px;
+    line-height: 23px;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.contact__detailsBio > table {
+    margin: 20px 0;
+}
+
+.contact__detailsBio > table > tr > td   {
+    padding: 2px 30px;
+}
+
+.second__row {
+    font-weight: 500;
+}
+
+.eduInner__sec , .toolInner__sec,
+ .langInner__sec, .skillsInner__sec {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttontype2 {
+    width: 100px;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-right: 8px;
+    background-color: #eee;
+    font-size: 10px;
+    margin-top: -3px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttontype2 {
+    width: 100px;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-right: 8px;
+    background-color: #eee;
+    font-size: 10px;
+    margin-top: -3px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edu__comp {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    min-height: auto;
+    padding-bottom: 20px;
+}
+
+
+.edu__comp > img {
+    height: 50px;
+    width: 50px;
+}
+
+.edu__header {
+    padding-left: 10px;
+    width: 270px;
+}
+.edu__header > p {
+    font-size: 12px;
+}
+
+.tool__sec, .lang__sec , .skills__sec {
+    padding-bottom: 20px;
+} 
+
+.toolLangSkills {
+    background-color: #FFFFFF;
+    font-size: 12px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 10px;
+    margin-right: 6px;
+    border-radius: 5px;
+    color: #808080;
+    border: 1px solid #E2E2E2;
+}
+.toolLangSkills:hover {
+    border: 1px solid #066fc0
+}
+.toolLangSkills .icon-delete:hover {
+   color: red;
+}
+
+.toolLangSkills > .MuiSvgIcon-root {
+    font-size: 17px;
+    padding-left:5px;
+    cursor: pointer;
+}
+
+.toolLangSkills__wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
