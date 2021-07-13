@@ -1,0 +1,35 @@
+.proposal__form {
+    padding: 40px 0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.proposal__form form{
+    display: flex;
+    flex-direction: column;
+}
+.porposal__inputBox {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+.porposal__inputBox label {
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 7px;
+}
+.porposal__inputBox input {
+    padding: 3px 10px;
+    border: 1px solid lightgray;
+}
+.porposal__inputBox input:focus {
+    border: 2px solid #066fc0;
+}
+
+.porposal__inputBox .descInput {
+    height: 100px;
+    padding: 7px 10px;
+}
+.budgetBox {
+    width: 400px;
+}

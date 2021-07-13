@@ -1,0 +1,13 @@
+.cpMain__wrapper {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 1px;
+}
+
+.cp__section {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 40px auto ;
+    background-color: #fff;
+}

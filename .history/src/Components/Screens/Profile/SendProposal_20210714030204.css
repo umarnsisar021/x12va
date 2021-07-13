@@ -1,0 +1,19 @@
+.proposal__form {
+    padding: 40px 0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.proposal__form form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.porposal__inputBox .descInput {
+    height: 100px;
+    padding: 7px 10px;
+}
+.budgetBox {
+    width: 400px;
+}

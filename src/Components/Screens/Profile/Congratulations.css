@@ -1,0 +1,34 @@
+.congo__wrapper {
+    background-color: #F6F7FA;   
+}
+.cong__inner {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px -1px 5px 1px #f1f1f1;
+    justify-content: center;
+    align-items: center;
+}
+.cong__details {
+    height: 300px;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.cong__details img {
+    /* width: 68px;
+    height: 70px; */
+    margin-bottom: 20px;
+}
+.cong__details h1 {
+    color: #079F80;
+    margin-bottom: 10px;
+}
+.cong__details p {
+    font-weight: 500;
+}
