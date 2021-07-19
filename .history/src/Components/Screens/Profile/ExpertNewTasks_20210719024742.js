@@ -4,7 +4,7 @@ import EverySectionHeader from '@components/EverySectionHeader'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ClientProfileComponents/ClientOrders.css'
 import NewTasksComponent from './NewTasksComponent';
-import OnGoingTasksComponent from './OnGoingTasksComponent';
+import NewTasksComponent from './ExpertOnGoingTasksComponent';
 import { useHistory, useParams } from 'react-router-dom';
 // import AssignedOrders from './AssignedOrders';
 // import PlacedOrders from './PlacedOrders';
@@ -81,7 +81,7 @@ const ExpertNewTasks = () => {
                   
                   <TabContent className='py-50' activeTab={active}>
                     <TabPane tabId='1'>
-                        <OnGoingTasksComponent />
+                        <NewTasksComponent />
                     </TabPane>
                     <TabPane tabId='2'>
                         <NewTasksComponent />

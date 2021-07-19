@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import GlobalLoader from '../../GlobalLoader'
 import Avatar from 'react-avatar'
-function NewTasksComponent(props) {
+function ExpertOnGoingTasksComponent(props) {
 
     let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)
@@ -169,4 +169,4 @@ function mapStateToProps(state) {
     const { auth } = state
     return { userData: auth.userData ,sessionToken: auth.sessionToken }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(NewTasksComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(ExpertOnGoingTasksComponent)

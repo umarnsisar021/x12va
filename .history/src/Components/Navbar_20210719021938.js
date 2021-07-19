@@ -89,11 +89,9 @@ function Navbar(props) {
                 <NavLink to="/trackorder" className="nav__link"><span>Track my order</span></NavLink>
                 <NavLink to="/experts" className="nav__link"><span>Experts</span></NavLink>
                 {
-                    Object.keys(props.userData).length > 0 ?
-                    props.userData.is_seller == 1 ? '':<NavLink to="/workforus" className="nav__link"><span>Work for us</span></NavLink>
-                    : <NavLink to="/workforus" className="nav__link"><span>Work for us</span></NavLink>
+                    
                 }
-                
+                <NavLink to="/workforus" className="nav__link"><span>Work for us</span></NavLink>
                 <NavLink to="/verifiers" className="nav__link"><span>Verifiers</span></NavLink>
                 <NavLink to="/supportus" className="nav__link"><span>Support us</span></NavLink>
 

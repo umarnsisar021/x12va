@@ -6,10 +6,10 @@ import WorkDetails from "./WorkDetails"
 import WorkLowerBanner from './WorkLowerBanner'
 
 function Work(props) {
-    let history = useHistory();
+    let history = useHistory()
     if(Object.keys(props.userData).length> 0){
         if(props.userData.is_seller == 1){
-            history.push('')
+            history.push('/')
         }
     }
     return (
