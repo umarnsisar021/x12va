@@ -49,16 +49,19 @@ function ExpertResult(props) {
     ));
      /// To submit task
      const onSubmit = async (data) => {
+         props.showFadeLoader('');
         if(filesList.length > 0){
             data['document'] = await getBase64(acceptedFiles[0]);
             data['token'] = props.sessionToken;
             data['skill_id'] = skill_id;
             useJwt.post("clients/add_task",data).then((res)=>{
                 if(res.data.task_id) {
+                   props.hideFadeLoader('');
                    history.push('/taskplaced/'+res.data.task_id)
                 }
             }).catch(function (error) {
                 if (error.response) {
+                    props.hideFadeLoader('');
                   // Request made and server responded
                   const data = error.response.data
                 toast.error(data.message, {
@@ -174,6 +177,8 @@ const mapDispatchToProps = (dispatch) => {
       // dispatching plain actions
       login: (data) => dispatch({ type: 'LOGIN', userData:data.user_info, token:data.token }),
       setToken: (data) => dispatch({ type: 'LOGIN', payload:data }),
+      showFadeLoader: (text) => dispatch({type:'SET_FADE_LOADER', payload: 'true', text: text }),
+      hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false, text: '' }),
 
     }
   }

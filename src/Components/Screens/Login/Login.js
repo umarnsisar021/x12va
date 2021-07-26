@@ -34,6 +34,7 @@ function Login( props ) {
         setModal_2(false)
     }
     const responseGoogle = (response) => {
+        props.showFadeLoader('');
         let profile = response.profileObj;
         if(profile) {
 
@@ -46,6 +47,7 @@ function Login( props ) {
                 google_id : profile.googleId
             }
             useJwt.post('clients/login',data).then((res) => {
+                props.hideFadeLoader('');
                 if(res.data.new_register == 1){
                     props.onHide();
                     setToken(res.data.token)
@@ -102,12 +104,14 @@ function Login( props ) {
     }
 
     const onSubmitSetUsername = (data)=> {
+        props.showFadeLoader('');
         data['token'] = token;
         if(data){
             useJwt.post('clients/set_username_or_password',data).then((res) => {
 
                     props.login(res.data);
                     setModal_2(false)
+                    props.hideFadeLoader('');
                     toast.success(res.data.message, {
                         position: "bottom-right",
                         autoClose: 5000,
@@ -145,9 +149,10 @@ function Login( props ) {
         }
     }
     const onSubmitLogin = (data)=> {
+        props.showFadeLoader('');
         if(data){
             useJwt.post('clients/login',data).then((res) => {
-                console.log(res)
+                    props.hideFadeLoader('');
                    if(res.data.token){
                     props.login(res.data);
                     props.onHide();
@@ -290,8 +295,10 @@ function Login( props ) {
 const mapDispatchToProps = (dispatch) => {
     return {
       // dispatching plain actions
-      login: (data) => dispatch({ type: 'LOGIN', userData:data.user_info, token:data.token }),
-      setToken: (data) => dispatch({ type: 'LOGIN', payload:data }),
+    login: (data) => dispatch({ type: 'LOGIN', userData:data.user_info, token:data.token }),
+    setToken: (data) => dispatch({ type: 'LOGIN', payload:data }),
+    showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true', text: text }),
+    hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false, text:''}),
 
     }
   }
