@@ -152,12 +152,6 @@ function Routes (props) {
             />
             <UserReferenceCode/>
           </AuthRoute>
-          <AuthRoute path="/user/expert/register" exact>
-            <Navbar
-              cName="navbar__color"
-            />
-            <RegisterExpert/>
-          </AuthRoute>
           <AuthRoute path="/expert/skill/create" exact>
             <Navbar
               cName="navbar__color"

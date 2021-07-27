@@ -3,7 +3,7 @@ import './WorkLowerBanner.css'
 import useJwt from '@utils'
 import { connect } from 'react-redux'
 import Login from '@screens/Login/Login'
-import { useHistory,Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 function WorkLowerBanner(props) {
@@ -11,7 +11,7 @@ function WorkLowerBanner(props) {
     const [modalShow, setModalShow] = React.useState(false);
     const handlSubmitRequestWithRef = ()=>{
         if(Object.keys(props.userData).length > 0) {
-            history.push('/user/expert/register')
+            history.push('/expert/register')
         } else{
             setModalShow(true)
         }       
@@ -47,8 +47,8 @@ function WorkLowerBanner(props) {
                     for. Well, if you pass the test, then you’ll 
                     be able to make profile on our network.
                 </p>
-                <Link onClick={handlSubmitRequestWithRef}>
-                    <button>Proceed to skills test method</button>
+                <Link onClick>
+                    <button onClick={handlSubmitRequestWithRef}>Proceed to skills test method</button>
                 </Link>
                
             </div>
