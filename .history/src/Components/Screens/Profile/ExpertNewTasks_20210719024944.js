@@ -81,7 +81,7 @@ const ExpertNewTasks = () => {
                   
                   <TabContent className='py-50' activeTab={active}>
                     <TabPane tabId='1'>
-                        <OnGoingTasksComponent />
+                        <NewTasksComponent />
                     </TabPane>
                     <TabPane tabId='2'>
                         <NewTasksComponent />

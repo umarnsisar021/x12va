@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import GlobalLoader from '../../GlobalLoader'
 import Avatar from 'react-avatar'
-function NewTasksComponent(props) {
+function ExpertOnGoingTasks(props) {
 
     let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)

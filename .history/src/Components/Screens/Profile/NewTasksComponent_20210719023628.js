@@ -124,11 +124,11 @@ function NewTasksComponent(props) {
         } else if (data.length === 0 && isFiltered) {
         return []
         } else {
-            return data.slice(0, rowsPerPage)
+            return data.data.slice(0, rowsPerPage)
         }
     }
 
-    if(data){
+    if(dat){
         return (
             <React.Fragment>
                 

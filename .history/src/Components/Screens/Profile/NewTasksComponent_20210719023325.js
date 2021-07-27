@@ -15,7 +15,7 @@ function NewTasksComponent(props) {
     let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
-    const [data, setdata] = React.useState([])
+    const [data, setdata] = React.useState(null)
     React.useEffect(()=>{
         useJwt.post('experts/get_expert_new_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
             setdata(res.data.records)
@@ -124,11 +124,11 @@ function NewTasksComponent(props) {
         } else if (data.length === 0 && isFiltered) {
         return []
         } else {
-            return data.slice(0, rowsPerPage)
+            return data.data.slice(0, rowsPerPage)
         }
     }
 
-    if(data){
+    if(data.length> 100){
         return (
             <React.Fragment>
                 

@@ -1,17 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useHistory } from 'react-router-dom'
 import WorkBanner from './WorkBanner'
 import WorkDetails from "./WorkDetails"
 import WorkLowerBanner from './WorkLowerBanner'
 
 function Work(props) {
-    let history = useHistory();
-    if(Object.keys(props.userData).length> 0){
-        if(props.userData.is_seller == 1){
-            history.push('')
-        }
-    }
+    if(props.userData)
     return (
         <div>
             <WorkBanner/>
