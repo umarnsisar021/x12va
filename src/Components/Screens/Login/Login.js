@@ -49,7 +49,7 @@ function Login( props ) {
             useJwt.post('clients/login',data).then((res) => {
                 props.hideFadeLoader('');
                 if(res.data.new_register == 1){
-                    props.onHide();
+                    props.onHide();     
                     setToken(res.data.token)
                     setS_R_username(true)
                     setS_R_password(true)
