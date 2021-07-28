@@ -11,7 +11,7 @@ function WorkLowerBanner(props) {
     const [modalShow, setModalShow] = React.useState(false);
     const handlSubmitRequestWithRef = ()=>{
         if(Object.keys(props.userData).length > 0) {
-            history.push('/user/expert/register')
+            history.push('/expert/register')
         } else{
             setModalShow(true)
         }       

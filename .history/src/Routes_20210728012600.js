@@ -152,7 +152,7 @@ function Routes (props) {
             />
             <UserReferenceCode/>
           </AuthRoute>
-          <AuthRoute path="/user/expert/register" exact>
+          <AuthRoute path="/expert/register" exact>
             <Navbar
               cName="navbar__color"
             />

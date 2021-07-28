@@ -19,7 +19,6 @@ import ExpertResult from './Components/Screens/ExpertsResults/ExpertResult';
 import ExpertResultFound from './Components/Screens/ExpertsResults/ExpertResultFound';
 import CreditCardDetails from './Components/Screens/CreditCardDetails/CreditCardDetails';
 import UserReferenceCode from './Components/Screens/UserReferenceCode/UserReferenceCode';
-import RegisterExpert from './Components/Screens/Profile/RegisterExpert';
 import ExpertSkillForm from './Components/Screens/Profile/ExpertSkillForm';
 import TestDetails from './Components/Screens/Profile/TestDetails';
 import TestForm from './Components/Screens/Profile/TestForm';
@@ -151,12 +150,6 @@ function Routes (props) {
               cName="navbar__color"
             />
             <UserReferenceCode/>
-          </AuthRoute>
-          <AuthRoute path="/user/expert/register" exact>
-            <Navbar
-              cName="navbar__color"
-            />
-            <RegisterExpert/>
           </AuthRoute>
           <AuthRoute path="/expert/skill/create" exact>
             <Navbar
