@@ -42,10 +42,7 @@ function Proposals(props) {
                     <div className="wrapper__innerBox" style={{ padding: '45px', }}>
                         <div style={{ width: '100%', background: '#F7FFFD', padding: '60px 45px', border: '1px solid #7DC3B4', borderRadius: '5px'}}>
                             <Row>
-                                <div className="mb-5" style={{display:'flex',columnGap: '10px',alignItems: 'center'}}>
-                                    <Avatar size={40}  name="Wim Mostmans" round="50%" src={"https://x12va.s3.ap-south-1.amazonaws.com/avatars/user-28.jpg"} />
-                                    <strong>{Data.expert_first_name} {Data.expert_last_name}</strong>
-                                </div>
+                                <Avatar  name="Wim Mostmans" round="20px" src={"https://x12va.s3.ap-south-1.amazonaws.com/avatars/user-28.jpg"} />
                             </Row>
                             
                             <Row>

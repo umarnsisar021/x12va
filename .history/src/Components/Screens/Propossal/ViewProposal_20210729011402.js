@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Proposals.css'
 import EverySectionHeader from '../../EverySectionHeader'
 /// Data Table
@@ -6,33 +6,28 @@ import useJwt, { useQuery } from '@utils'
 import { connect } from 'react-redux'
 import { Row } from 'reactstrap'
 import { useParams, useLocation, useHistory } from 'react-router-dom'
-import Avatar from 'react-avatar'
 function Proposals(props) {
-    const [Data,setData] = React.useState(null)
-    let { data } = useLocation();
+    let { data} = useLocation();
     let history =  useHistory();
     let query = useQuery();
     let id = query.get('id');
     props.showFadeLoader();
-    useEffect(()=>{
-        if(data){
-            setData(data)
+    if(data){
+        data = data
+        props.hideFadeLoader();
+    }
+    else if(id) {
+        useJwt.post('clients/get_proposal_by_id', {token: props.sessionToken,proposal_id:id}).then((res)=>{
+            if(Object.keys(res.data.records).length > 0){
+                data= res.data.records
+            }
             props.hideFadeLoader();
-        }
-        else if(id) {
-            useJwt.post('clients/get_proposal_by_id', {token: props.sessionToken,proposal_id:id}).then((res)=>{
-                if(Object.keys(res.data.records).length > 0){
-                    setData(res.data.records)
-                }
-                props.hideFadeLoader();
-            })
-        }
-        else{
-           history.goBack();
-        }
-    },[])
-    
-    if (Data){
+        })
+    }
+    else{
+       history.goBack();
+    }
+    if (data){
         return (
             <React.Fragment>
                 <EverySectionHeader
@@ -42,32 +37,25 @@ function Proposals(props) {
                     <div className="wrapper__innerBox" style={{ padding: '45px', }}>
                         <div style={{ width: '100%', background: '#F7FFFD', padding: '60px 45px', border: '1px solid #7DC3B4', borderRadius: '5px'}}>
                             <Row>
-                                <div className="mb-5" style={{display:'flex',columnGap: '10px',alignItems: 'center'}}>
-                                    <Avatar size={40}  name="Wim Mostmans" round="50%" src={"https://x12va.s3.ap-south-1.amazonaws.com/avatars/user-28.jpg"} />
-                                    <strong>{Data.expert_first_name} {Data.expert_last_name}</strong>
-                                </div>
-                            </Row>
-                            
-                            <Row>
                                 <h6 className="text-uppercase font-weight-bold">Problem statement</h6>
                             </Row>
                             <Row>
-                                <p className="">{Data.problem_statement}</p>
+                                <p className="">{data.problem_statement}</p>
                             </Row>
                             <Row className="mt-3">
                                 <h6 className="text-uppercase font-weight-bold">DESCRIPTION</h6>
                             </Row>
                             <Row>
-                                <p className="">{Data.description}</p>
+                                <p className="">{data.description}</p>
                             </Row>
                             <Row className="mt-3">
                                 <h6 className="text-uppercase font-weight-bold">DAYS</h6>
                             </Row>
                             <Row>
-                                <p className="">{Data.days} days</p>
+                                <p className="">{data.days} days</p>
                             </Row>
                             <Row className="mt-3">
-                                <h5 className="">BUDGET: <strong className="color-theme-green">&nbsp;${Data.budget}</strong></h5>
+                                <h5 className="">BUDGET: <strong className="color-theme-green">&nbsp;${data.budget}</strong></h5>
                             </Row>
                             <Row className="mt-3">
                                 <div style={{display: 'flex',columnGap: '10px'}}>

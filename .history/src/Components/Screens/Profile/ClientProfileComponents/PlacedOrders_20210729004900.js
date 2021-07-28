@@ -53,7 +53,7 @@ const PlacedOrders = (props) => {
                                         <td>
                                             <button style={{fontSize: '12px'}} className="btn-theme-default">
                                                 <Link to={{
-                                                    pathname:"/proposals/"+row.id,
+                                                    pathname:"/proposals/row.id",
                                                     data:{task_id:row.id}
                                                 }}>Proposals</Link>
                                             </button>

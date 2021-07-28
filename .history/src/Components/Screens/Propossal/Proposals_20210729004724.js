@@ -8,7 +8,7 @@ import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather'
 import DataTable from 'react-data-table-component'
 import useJwt, { useQueryLocation } from '@utils'
 import { connect } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import GlobalLoader from '../../GlobalLoader'
 function Proposals(props) {
 
@@ -16,9 +16,9 @@ function Proposals(props) {
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
     const [data, setdata] = React.useState(null)
-    const {task_id} =useParams();
+    let task_id = ''
     React.useEffect(()=>{
-        useJwt.post('clients/get_client_proposals', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken ,task_id:task_id}).then((res)=>{
+        useJwt.post('clients/get_client_proposals', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken ,task_id:query.data.task_id}).then((res)=>{
             setdata(res.data.records)
         })
     },[1])
@@ -103,7 +103,7 @@ function Proposals(props) {
             sortable: true,
             cell: row => (<>
                 <button className="btn-theme-light">
-                    <Link to={{ pathname: '/proposal/view?id='+row.id, data: row}} params={{  }}>View Proposal</Link>
+                    <Link to={{ pathname: 'proposal', data: row}}params={{ query: "hello" }}>View Proposal</Link>
                 </button>
             </>)
         },
@@ -177,8 +177,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // dispatching plain actions
         login: (data) => dispatch({ type: 'LOGIN', payload: data }),
-        showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
-        hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }
 }
 function mapStateToProps(state) {

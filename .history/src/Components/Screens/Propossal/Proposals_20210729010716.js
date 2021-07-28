@@ -177,8 +177,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // dispatching plain actions
         login: (data) => dispatch({ type: 'LOGIN', payload: data }),
-        showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
-        hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }
 }
 function mapStateToProps(state) {
