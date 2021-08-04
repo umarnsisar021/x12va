@@ -16,7 +16,7 @@ function WalletDetails(props) {
     const [loaded,setLoaded] =React.useState(false);
     useEffect(()=>{
         const Run = async ()=>{
-            useJwt.post('transaction/get_wallet_summary',{token:props.sessionToken}).then((res)=>{
+            useJwt.post('transaction/get_transaction_history',{token:props.sessionToken}).then((res)=>{
                 if(res.data){
                    
                     setData(res.data);

@@ -12,20 +12,15 @@ import TransactionHistoryComponent from './TransactionHistoryComponent'
 
 function WalletDetails(props) {
     const { register, handleSubmit,control, watch, formState: { errors } ,reset} = useForm();
-    const [data,setData] =React.useState([]);
-    const [loaded,setLoaded] =React.useState(false);
+    const [loaded,setLoaded] =React.useState(false)
     useEffect(()=>{
-        const Run = async ()=>{
-            useJwt.post('transaction/get_wallet_summary',{token:props.sessionToken}).then((res)=>{
-                if(res.data){
-                   
-                    setData(res.data);
-                    setLoaded(true);
-                }
-            })
-        }   
-        Run();
-    },[])
+        //props.showFadeLoader();
+        useJwt.post('transaction/get_transaction_history',{token:props.sessionToken}).then((res)=>{
+            if(res){
+                
+            }
+        })
+    })
 
     if(loaded){
         return (
@@ -36,7 +31,7 @@ function WalletDetails(props) {
                 />
                 <div className="refc__inner px-0 py-0">
                     <div className="wallet-detail-top">
-                        <h5 className="mb-0 d-inline-block" style={{fontWeight:600}}>Balance &nbsp; &nbsp; <span>${data.balance}</span></h5>
+                        <h5 className="mb-0 d-inline-block" style={{fontWeight:600}}>Balance &nbsp; &nbsp; <span>$200</span></h5>
                         <div className="float-right d-inline-block">
                             <Link className="btn-theme-default btn-sm mr-3">Withdraw</Link>
                             <Link className="btn-theme-default btn-sm">TopUp</Link>
@@ -44,19 +39,19 @@ function WalletDetails(props) {
                     </div>
                     <div className="d-flex wallet-detail-container">
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>{data.balance}</p>
+                            <p className="item-amount"><span className="currency">$</span>150.50</p>
                             <p className="item-heading">AVAILABLE FOR WITHDRAWAL</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>-{data.used_purchase}</p>
+                            <p className="item-amount"><span className="currency">$</span>-150.50</p>
                             <p className="item-heading">USED FOR PURCHASES</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>{data.withdrawal}</p>
+                            <p className="item-amount"><span className="currency">$</span>150.50</p>
                             <p className="item-heading">WITHDRAWN</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>{data.topup}</p>
+                            <p className="item-amount"><span className="currency">$</span>150.50</p>
                             <p className="item-heading">TOPUP</p>
                         </div>
                         
@@ -66,7 +61,7 @@ function WalletDetails(props) {
 
                 <div className="refc__inner px-0 py-0" style={{boxShadow:'none',backgroundColor:'transparent'}}>
                    
-                    <TransactionHistoryComponent  data={data.records}/>
+                    <TransactionHistoryComponent />
                     
                 </div>
             </div>

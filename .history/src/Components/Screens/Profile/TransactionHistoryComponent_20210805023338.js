@@ -78,21 +78,19 @@ function TransactionHistoryComponent(props) {
         selector: 'Name',
         sortable: true,
         cell: row => (<div style={{alignItems: 'center'}}>
-               
-                <span className='align-middle  pl-2'>{row.description}</span>
+                <Avatar
+                color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                />
+                <span className='align-middle font-weight-bold pl-2'>{row.skill_name}</span>
             </div>)
     },
     {
         name: 'AMOUNT',
         minWidth: '40%',
-        right:true,
         selector: 'Name',
         sortable: true,
-        cell: row => (
-            <div className={"px-4 font-weight-bold"} style={{textAlign:'right',width:'100%'}}>
-                 {row.debit > 0 ? <span style={{color:'green'}}>{row.debit}</span> : <span style={{color:'red'}}>-{row.credit}</span>}
-            </div>
-        )
+        cell: row => row.description
     },
 
 ]

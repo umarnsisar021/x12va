@@ -16,9 +16,8 @@ function WalletDetails(props) {
     const [loaded,setLoaded] =React.useState(false);
     useEffect(()=>{
         const Run = async ()=>{
-            useJwt.post('transaction/get_wallet_summary',{token:props.sessionToken}).then((res)=>{
+            useJwt.post('transaction/get_transaction_history',{token:props.sessionToken}).then((res)=>{
                 if(res.data){
-                   
                     setData(res.data);
                     setLoaded(true);
                 }
@@ -48,15 +47,15 @@ function WalletDetails(props) {
                             <p className="item-heading">AVAILABLE FOR WITHDRAWAL</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>-{data.used_purchase}</p>
+                            <p className="item-amount"><span className="currency">$</span>-150.50</p>
                             <p className="item-heading">USED FOR PURCHASES</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>{data.withdrawal}</p>
+                            <p className="item-amount"><span className="currency">$</span>150.50</p>
                             <p className="item-heading">WITHDRAWN</p>
                         </div>
                         <div className="wallet-detail-item">
-                            <p className="item-amount"><span className="currency">$</span>{data.topup}</p>
+                            <p className="item-amount"><span className="currency">$</span>150.50</p>
                             <p className="item-heading">TOPUP</p>
                         </div>
                         
@@ -66,7 +65,7 @@ function WalletDetails(props) {
 
                 <div className="refc__inner px-0 py-0" style={{boxShadow:'none',backgroundColor:'transparent'}}>
                    
-                    <TransactionHistoryComponent  data={data.records}/>
+                    <TransactionHistoryComponent />
                     
                 </div>
             </div>

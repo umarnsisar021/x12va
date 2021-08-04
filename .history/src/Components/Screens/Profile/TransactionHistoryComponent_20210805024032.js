@@ -79,17 +79,16 @@ function TransactionHistoryComponent(props) {
         sortable: true,
         cell: row => (<div style={{alignItems: 'center'}}>
                
-                <span className='align-middle  pl-2'>{row.description}</span>
+                <span className='align-middle font-weight-bold pl-2'>{row.description}</span>
             </div>)
     },
     {
         name: 'AMOUNT',
         minWidth: '40%',
-        right:true,
         selector: 'Name',
         sortable: true,
         cell: row => (
-            <div className={"px-4 font-weight-bold"} style={{textAlign:'right',width:'100%'}}>
+            <div className={"px-4"} style={{textAlign:'right',width:'100%'}}>
                  {row.debit > 0 ? <span style={{color:'green'}}>{row.debit}</span> : <span style={{color:'red'}}>-{row.credit}</span>}
             </div>
         )
