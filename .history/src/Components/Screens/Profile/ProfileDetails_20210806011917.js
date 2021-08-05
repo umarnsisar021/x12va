@@ -3,7 +3,6 @@ import './ProfileDetails.css'
 import EducationTile from './EducationTile'
 import ToolLangSkillsTile from './ToolLangSkillsTile'
 import ExpertSkillComponent from './ExpertSkillComponent'
-import ExpertToolsComponent from './ExpertToolsComponent'
 import renameIcon from '../../../Assets/Images/rename icon.png'
 import eduAvatar from '../../../Assets/Images/eduAvatar.png'
 import {Link} from 'react-router-dom'
@@ -64,8 +63,6 @@ function ProfileDetails(props) {
                     avatar={eduAvatar}
                 />
             </div>
-
-            <ExpertToolsComponent />
 
             <div className="tool__sec">
                 <div className="toolInner__sec">
