@@ -4,7 +4,7 @@ import { Tooltip } from 'reactstrap';
 function ToolLangSkillsTile(props) {
     return (
         <span className="toolLangSkills">
-            <span style={{padding:'0px 15px 0px 0px'}}>{props.title}</span>
+            {props.title}{props.action === true ? props.icon : ""}
             <span className="icon-delete" onClick={props.onDelete} style={{paddingLeft:'5px',float:'right' , borderLeft: "1px solid #D3D3D3"}}><X size={14}/></span>
         </span>
     )

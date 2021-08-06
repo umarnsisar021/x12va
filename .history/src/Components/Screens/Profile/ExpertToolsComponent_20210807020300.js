@@ -25,7 +25,7 @@ function ExpertToolsComponent  (props) {
     },[])
 
     const deleteTool = (id) => {
-        useJwt.post('experts/tool_delete',{id:id,token:props.sessionToken}).then((res)=>{
+        useJwt.post('',{id:id,token:props.sessionToken}).then((res)=>{
             toast.success(res.data.message,{})
         })
     }

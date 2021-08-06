@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileDetails.css'
-import ToolLangSkillsTile from './ToolLangSkillsTile'
+import {SkillsTile} from './ToolLangSkillsTile'
 import ContentLoader from "react-content-loader"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
@@ -9,8 +9,6 @@ import withReactContent from 'sweetalert2-react-content'
 import {connect} from 'react-redux'
 import useJwt from '@utils'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
-
 
 const MySwal = withReactContent(Swal)
 function ExpertToolsComponent  (props) {
@@ -23,13 +21,7 @@ function ExpertToolsComponent  (props) {
         },1000)
       
     },[])
-
-    const deleteTool = (id) => {
-        useJwt.post('experts/tool_delete',{id:id,token:props.sessionToken}).then((res)=>{
-            toast.success(res.data.message,{})
-        })
-    }
-     if(data){
+    if(data){
         return (
             <div className="skills__sec">
                 <div className="skillsInner__sec">
@@ -40,7 +32,7 @@ function ExpertToolsComponent  (props) {
                 <div className="toolLangSkills__wrapper">
                     {
                         Object.values(data).map((i)=>{
-                            return <ToolLangSkillsTile
+                            return <SkillsTile
                                         title={`${i.name}`}
                                         onDelete={()=>{
                                             MySwal.fire({
@@ -53,7 +45,7 @@ function ExpertToolsComponent  (props) {
                                                 cancelButtonText: 'Cancel',
                                               }).then((result) => {
                                                     if(result.value){
-                                                        deleteTool(i.id)
+                                                        console.log(true)
                                                     }
                                               })
                                         }}

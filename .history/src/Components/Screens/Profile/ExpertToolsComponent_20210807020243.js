@@ -25,7 +25,7 @@ function ExpertToolsComponent  (props) {
     },[])
 
     const deleteTool = (id) => {
-        useJwt.post('experts/tool_delete',{id:id,token:props.sessionToken}).then((res)=>{
+        useJwt.post('',{id:id,token:props.sessionToken}).then((res)=>{
             toast.success(res.data.message,{})
         })
     }
@@ -53,7 +53,7 @@ function ExpertToolsComponent  (props) {
                                                 cancelButtonText: 'Cancel',
                                               }).then((result) => {
                                                     if(result.value){
-                                                        deleteTool(i.id)
+                                                        console.log(true)
                                                     }
                                               })
                                         }}

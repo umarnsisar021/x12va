@@ -9,8 +9,7 @@ import withReactContent from 'sweetalert2-react-content'
 import {connect} from 'react-redux'
 import useJwt from '@utils'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
-
+import { Toast } from 'bootstrap'
 
 const MySwal = withReactContent(Swal)
 function ExpertToolsComponent  (props) {
@@ -25,8 +24,8 @@ function ExpertToolsComponent  (props) {
     },[])
 
     const deleteTool = (id) => {
-        useJwt.post('experts/tool_delete',{id:id,token:props.sessionToken}).then((res)=>{
-            toast.success(res.data.message,{})
+        useJwt.post('',{id:id,token:props.sessionToken}).then((res)=>{
+            Toast.success(res.data.message,{})
         })
     }
      if(data){
@@ -53,7 +52,7 @@ function ExpertToolsComponent  (props) {
                                                 cancelButtonText: 'Cancel',
                                               }).then((result) => {
                                                     if(result.value){
-                                                        deleteTool(i.id)
+                                                        console.log(true)
                                                     }
                                               })
                                         }}
