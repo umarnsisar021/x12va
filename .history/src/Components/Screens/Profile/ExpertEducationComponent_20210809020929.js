@@ -96,7 +96,7 @@ function ExpertEducationComponent  (props) {
         return (
             <div className="skills__sec">
                 <div className="skillsInner__sec">
-                    <h5 className="blue__heading">Education</h5>
+                    <h5 className="blue__heading">Educations</h5>
                     <Link onClick={()=>{onShowModal()}}><button className="buttontype2" >Add New</button></Link>
                 </div>
                 <hr/>
