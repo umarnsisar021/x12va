@@ -30,7 +30,7 @@ function ProfileSidebar(props) {
                     <button>Set Availability</button>
                 </div>
             </div> 
-            <Link to="experts/orders" className="px-1 "><button className="btn-theme-default btn-sm mb-2">My Order</button></Link>
+            <Link to="experts/orders" className="px-1 pb-2"><button className="btn-theme-default btn-sm">My Order</button></Link>
             <Link className="px-1"><button className="btn-theme-default btn-sm">Take Skills Test</button></Link>
         </div>
     )
