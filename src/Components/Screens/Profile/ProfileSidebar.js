@@ -1,20 +1,50 @@
 import React from 'react'
 import './ProfileSidebar.css'
-
+import { Button, Media, Label, Row, Col, Input, FormGroup, Alert, Form } from 'reactstrap'
 import profileAvatar from '../../../Assets/Images/Mask Group 5.png'
+import $ from 'jquery'; 
+import useJwt from '@utils'
 /// Redux
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
 function ProfileSidebar(props) {
-    
+    const [avatar,setAvatar] = React.useState(null)
+    let fileInputRef = React.useRef();
+    const changeProfile = (e) =>{
+        const reader = new FileReader(),
+        files = e.target.files
+        reader.onload = function () {
+            setAvatar(reader.result);
+            uploadProfile(reader.result)
+        }
+        reader.readAsDataURL(files[0])
+    }
+    const uploadProfile =(base64) =>{
+        props.showFadeLoader('Uploading Profile...');
+        useJwt.post('member/change_profile',{avatar:base64,token:props.sessionToken}).then((res)=>{
+            let data = props.userData;
+            data['avatar'] = res.data.avatar;
+            console.log(data)
+            props.setUserData({...data});
+            toast.success(res.data.message,{});
+            props.hideFadeLoader();
+        })
+    } 
     return (
         <div className="profile__sidebar">
             <div className="profile__avatar">
-                <img src={props.userData.avatar} />
+                <img src={ avatar ? avatar : props.userData.avatar} />
             </div>
             <h3 className="pUser__name">{props.userData.first_name} {props.userData.last_name}</h3>
             {/* <p className="user__bio">Finance Project Manager</p> */}
-            <button className="change__imgbtn">Change image</button>
+            
+            <button className="change__imgbtn" onClick={()=>{
+                 $('input[type=file]').trigger('click')
+            }}>
+                Change image
+                <Input type='file' ref={elem => fileInputRef.current = elem} onChange={changeProfile} hidden accept='image/*' />
+            </button>
             <hr/>
             <div className="basic__details pb-2">
                 <div className="basicLeft__sec">
@@ -38,6 +68,7 @@ function ProfileSidebar(props) {
 const mapDispatchToProps = (dispatch) => {
     return {
       // dispatching plain actions
+      setUserData: (data) => dispatch({ type: 'SET_USERDATA', payload: data }),
       showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
       hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }

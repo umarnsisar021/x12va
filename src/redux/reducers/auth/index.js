@@ -16,6 +16,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, userData: {},sessionToken:'', ...obj }
     case 'SWITCH_ACCOUNT_MODE':
       return { ...state, account_mode: action.mode}
+    case 'SET_USERDATA':
+      return {...state, userData: action.payload}
     default:
       return state
   }
