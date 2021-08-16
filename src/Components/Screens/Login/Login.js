@@ -27,9 +27,7 @@ function Login( props ) {
 
     const [token , setToken] = React.useState('');
     /// Google Response
-    useEffect(()=>{
-       // console.log(props.userData)
-    })
+
     const onHideModal_2 = () =>{
         setModal_2(false)
     }
