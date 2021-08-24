@@ -17,16 +17,12 @@ function NewTasksComponent(props) {
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
     const [data, setdata] = React.useState([])
     props.showFadeLoader();
-    setTimeout(()=>{
-        props.hideFadeLoader();
-    },3000)
     React.useEffect(()=>{
-        props.showFadeLoader();
         useJwt.post('experts/get_expert_new_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
             setdata(res.data.records)
             props.hideFadeLoader();
         })
-    },[])
+    },[1])
 
     // ** Custom Pagination
     const CustomPagination = (d) => {

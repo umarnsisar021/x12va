@@ -10,23 +10,19 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import GlobalLoader from '../../GlobalLoader'
 import Avatar from 'react-avatar'
-function NewTasksComponent(props) {
+function TransactionHistoryComponent(props) {
 
     let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
-    const [data, setdata] = React.useState([])
-    props.showFadeLoader();
-    setTimeout(()=>{
-        props.hideFadeLoader();
-    },3000)
+    const [data, setdata] = React.useState(null)
     React.useEffect(()=>{
-        props.showFadeLoader();
-        useJwt.post('experts/get_expert_new_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
-            setdata(res.data.records)
-            props.hideFadeLoader();
+        useJwt.post('transaction/get_transaction_history', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken,status:1 }).then((res)=>{
+            //console.log(res.data.records)
+            setdata(res.data.records.data)
+           
         })
-    },[])
+    },[1])
 
     // ** Custom Pagination
     const CustomPagination = (d) => {
@@ -58,7 +54,7 @@ function NewTasksComponent(props) {
     }
     // ** Function in get data on page change
     const handlePagination = page => {
-        useJwt.post('experts/get_expert_new_tasks', {
+        useJwt.post('transaction/get_transaction_history', {
             page: page.selected + 1,
             perPage: rowsPerPage,
             token: props.sessionToken
@@ -70,52 +66,34 @@ function NewTasksComponent(props) {
     // ** Colums
     const columns = [
         {
-            name: 'ORDER NUMBER',
+            name: 'DATE',
             minWidth: '160px',
             selector: 'Name',
             sortable: true,
-            cell: row => row.id
+            cell: row => row.created_at
         },
         {
-        name: 'SUBJECT',
+        name: 'DESCRIPTION',
         minWidth: '160px',
         selector: 'Name',
         sortable: true,
         cell: row => (<div style={{alignItems: 'center'}}>
-                <Avatar
-                color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
-                name={row.skill_name} round={true} size={32}  textSizeRatio={2}
-                />
-                <span className='align-middle font-weight-bold pl-2'>{row.skill_name}</span>
+               
+                <span className='align-middle  pl-2'>{row.description}</span>
             </div>)
     },
     {
-        name: 'DESCRIPTION',
+        name: 'AMOUNT',
         minWidth: '40%',
+        right:true,
         selector: 'Name',
         sortable: true,
-        cell: row => row.description.split('\n')[0]
+        cell: row => (
+            <div className={"px-4 font-weight-bold"} style={{textAlign:'right',width:'100%'}}>
+                 {row.debit > 0 ? <span style={{color:'green'}}>{row.debit}</span> : <span style={{color:'red'}}>-{row.credit}</span>}
+            </div>
+        )
     },
-    {
-        name: 'DAYS',
-        minWidth: '',
-        selector: 'Name',
-        sortable: true,
-        cell: row => (<> {`${row.days} days`}</>)
-    },
-    {
-            name: '',
-            minWidth: '200px',
-            selector: 'Name',
-            sortable: true,
-            cell: row => (<>
-                <Link to={{ pathname: '/experts/order/view', data: row}}params={{ query: "" }}>
-                    <button className="btn-theme-light btn-sm">
-                        View Order
-                    </button>
-                </Link>
-            </>)
-        },
 
 ]
     // ** Table data to render
@@ -137,25 +115,22 @@ function NewTasksComponent(props) {
     if(data){
         return (
             <React.Fragment>
-                
-                <div className="wrapper__box">
-                    <div className="wrapper__innerBox" style={{ padding: '0px', background: '#f6f7fa' }}>
-                        <div>
-                            <DataTable
-                                noHeader
-                                pagination
+                <div className="pb-3">
+                    <h5>Transaction History</h5>
+                </div>
+                <div className="" style={{ padding: '0px', background: '#f6f7fa' }}>
+                    <DataTable
+                        noHeader
+                        pagination
 
-                                responsive
-                                paginationServer
-                                columns={columns}
-                                sortIcon={<ChevronDown />}
-                                className='react-dataTable'
-                                paginationComponent={CustomPagination}
-                                data={dataToRender()}
-                            />
-                        </div>
-
-                    </div>
+                        responsive
+                        paginationServer
+                        columns={columns}
+                        sortIcon={<ChevronDown />}
+                        className='react-dataTable'
+                        paginationComponent={CustomPagination}
+                        data={dataToRender()}
+                    />
                 </div>
             </React.Fragment>
         )
@@ -169,12 +144,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // dispatching plain actions
         login: (data) => dispatch({ type: 'LOGIN', payload: data }),
-        showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
-        hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }
 }
 function mapStateToProps(state) {
     const { auth } = state
     return { userData: auth.userData ,sessionToken: auth.sessionToken }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(NewTasksComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(TransactionHistoryComponent)

@@ -215,12 +215,6 @@ function Routes (props) {
             />
             <ExpertViewOrder />
           </AuthRoute>
-          <AuthRoute path="/experts/order/view/history/:task_id" exact>
-            <Navbar
-              cName="navbar__color"
-            />
-            <OrderHistory />
-          </AuthRoute>
           <AuthRoute path="/experts/order/view/sendproposal" exact>
             <Navbar
               cName="navbar__color"

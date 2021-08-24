@@ -19,7 +19,7 @@ function NewTasksComponent(props) {
     props.showFadeLoader();
     setTimeout(()=>{
         props.hideFadeLoader();
-    },3000)
+    },1500)
     React.useEffect(()=>{
         props.showFadeLoader();
         useJwt.post('experts/get_expert_new_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{

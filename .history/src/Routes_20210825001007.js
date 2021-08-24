@@ -215,7 +215,7 @@ function Routes (props) {
             />
             <ExpertViewOrder />
           </AuthRoute>
-          <AuthRoute path="/experts/order/view/history/:task_id" exact>
+          <AuthRoute path="/experts/order/view/:task_id" exact>
             <Navbar
               cName="navbar__color"
             />

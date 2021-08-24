@@ -10,23 +10,17 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import GlobalLoader from '../../GlobalLoader'
 import Avatar from 'react-avatar'
-function NewTasksComponent(props) {
+function OnGoingTasksComponent(props) {
 
     let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
     const [data, setdata] = React.useState([])
-    props.showFadeLoader();
-    setTimeout(()=>{
-        props.hideFadeLoader();
-    },3000)
     React.useEffect(()=>{
-        props.showFadeLoader();
-        useJwt.post('experts/get_expert_new_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
+        useJwt.post('experts/get_expert_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken,status:1 }).then((res)=>{
             setdata(res.data.records)
-            props.hideFadeLoader();
         })
-    },[])
+    },[1])
 
     // ** Custom Pagination
     const CustomPagination = (d) => {
@@ -94,7 +88,7 @@ function NewTasksComponent(props) {
         minWidth: '40%',
         selector: 'Name',
         sortable: true,
-        cell: row => row.description.split('\n')[0]
+        cell: row => row.description
     },
     {
         name: 'DAYS',
@@ -170,11 +164,11 @@ const mapDispatchToProps = (dispatch) => {
         // dispatching plain actions
         login: (data) => dispatch({ type: 'LOGIN', payload: data }),
         showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
-        hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
+      hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }
 }
 function mapStateToProps(state) {
     const { auth } = state
     return { userData: auth.userData ,sessionToken: auth.sessionToken }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(NewTasksComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(OnGoingTasksComponent)

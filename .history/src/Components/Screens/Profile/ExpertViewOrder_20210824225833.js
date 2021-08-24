@@ -77,7 +77,7 @@ function ExpertViewOrder(props) {
                                 <h6 className="text-uppercase font-weight-bold">DOCUMENT</h6>
                             </Row>
                             <Row>
-                                <p className="">{ taskData.document ? taskData.document.replace(/^.*[\\\/]/, '') : ''} <ArrowDownCircle className="pointer" onClick={()=>{
+                                <p className="">{ taskData.document ? taskData.document.replace(/^.*[\\\/]/, '')} <ArrowDownCircle className="pointer" onClick={()=>{
                                      const win = window.open(taskData.document, "_blank");
                                      win.focus();
                                 }}></ArrowDownCircle></p>

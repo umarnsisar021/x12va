@@ -41,7 +41,6 @@ import ExpertsSendProposal from '@screens/Profile/ExpertsSendProposal'
 import ExpertProposalSubmitCongratulations from '@screens/Profile/ExpertProposalSubmitCongratulations'
 import ExpertProposalView from '@screens/Propossal/ExpertProposalView'
 import WalletDetails from '@screens/Profile/WalletDetails'
-import OrderHistory from '@screens/Profile/OrderHistory'
 
 
 function Routes (props) {
@@ -214,12 +213,6 @@ function Routes (props) {
               cName="navbar__color"
             />
             <ExpertViewOrder />
-          </AuthRoute>
-          <AuthRoute path="/experts/order/view/history/:task_id" exact>
-            <Navbar
-              cName="navbar__color"
-            />
-            <OrderHistory />
           </AuthRoute>
           <AuthRoute path="/experts/order/view/sendproposal" exact>
             <Navbar
