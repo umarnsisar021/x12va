@@ -1,0 +1,75 @@
+.ccd__wrapper {
+    background-color: #F6F7FA;   
+}
+.ccd__inner {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px -1px 5px 1px #f1f1f1;
+}
+.ccd__header {
+    background-image: url("../../../Assets/Images/Rectangle\ 207.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    color: #fff;
+    line-height: 17px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+}
+.ccd__form {
+    width: 100%;
+}
+.form__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.form__row2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.input__box {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.input__box2 {
+    display: flex;
+    flex-direction: column;
+    width: calc(20% - 10px);
+    margin-right: 20px;
+}
+.ccd__form form label {
+    font-weight: 600;
+    /* font-size: 13px; */
+}
+.input__box input , .input__box2 input {
+    width: 100%;
+    padding: 4px 10px;
+    margin-top: 5px;
+}
+.input__box input:focus {
+    border: 2px solid #066fc0;
+}
+.ccd__form button {
+    background-color: #066fc0;
+    border: none;
+    outline: none;
+    padding: 5px 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+}

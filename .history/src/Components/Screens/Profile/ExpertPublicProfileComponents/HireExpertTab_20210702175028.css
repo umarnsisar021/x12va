@@ -1,0 +1,40 @@
+.hire__tab {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 60px 0;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.hire__tab h3 {
+    color: #000;
+    font-weight: 600;
+}
+.hire__tab p {
+    padding: 0 15%;
+}
+.ht__btn {
+    margin-top: 20px;
+}
+.ht__btn button {
+    margin-right: 10px;
+    color: #000;
+    border: 1px solid lightgray;
+    outline: none;
+    border-radius: 3px;
+    background-color: #eee;
+    padding: 5px 20px;
+    font-weight: 600;
+}
+.ht__btn button:last-child {
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: #066fc0;
+    padding: 5px 20px;
+    font-weight: 600;
+}

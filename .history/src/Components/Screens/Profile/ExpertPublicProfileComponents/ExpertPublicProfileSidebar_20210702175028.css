@@ -1,0 +1,16 @@
+.profile__sidebar table {
+    margin-top: 35px;
+    margin: 30px auto 10px auto;
+}
+.profile__sidebar table tr td {
+    font-size: 12px;
+}
+.profile__sidebar table .left__col {
+    text-align: left;
+    padding-right: 15px;
+}
+.profile__sidebar table .right__col {
+    text-align: right;
+    padding-left: 15px;
+    font-weight: 600;
+}

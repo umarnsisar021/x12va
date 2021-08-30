@@ -1,0 +1,32 @@
+.cprofile__details {
+    padding-left: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+}
+
+.cprofile__details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.order__table {
+    width: 100%;
+    border: 1px solid #DEDEDE;
+    border-collapse: collapse;
+}
+.order__table th , .order__table td{
+    padding-left:20px;
+    padding-right:20px;
+}
+.order__table th {
+    font-size: 13px !important;    
+}
+.order__table td {
+    font-size: 12px !important;
+}
+.order__table td span {
+  
+}
+.order__table tr td {
+    white-space: nowrap;
+}
