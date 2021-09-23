@@ -1,0 +1,18 @@
+.updateOrder__file {
+    background-color: #F6F7FA;
+}
+
+.updateOrderFile__btn {
+    background-color: #066fc0;
+    border: none;
+    outline: none;
+    padding: 5px 30px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+.helpFile__drag p {
+    font-size: 12px;
+}
