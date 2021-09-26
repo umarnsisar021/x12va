@@ -13,7 +13,6 @@ import DataTable from 'react-data-table-component';
 import CongAvatar from '../../../Assets/Images/congratsIcon.png'
 import UpdateOrderFile from './OrderHistoryComponents/UpdateOrderFile'
 import UpdateCommentsComponent from './OrderHistoryComponents/UpdateCommentsComponent'
-import ClientUpdateOrderComponent from './OrderHistoryComponents/ClientUpdateOrderComponent'
 
 
 
@@ -183,8 +182,7 @@ const dataToRender = () => {
                     })
                 }
                 {/* show update form for expert */}
-                <UpdateOrderFile  data={data} userData={props.userData}  />
-                <ClientUpdateOrderComponent data={data} userData={props.userData} />
+                <UpdateOrderFile  data={data} />
               
             </div>
 

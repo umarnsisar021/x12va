@@ -183,8 +183,7 @@ const dataToRender = () => {
                     })
                 }
                 {/* show update form for expert */}
-                <UpdateOrderFile  data={data} userData={props.userData}  />
-                <ClientUpdateOrderComponent data={data} userData={props.userData} />
+                <UpdateOrderFile  data={data} />
               
             </div>
 

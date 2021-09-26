@@ -11,9 +11,8 @@ import { useParams } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import DataTable from 'react-data-table-component';
 import CongAvatar from '../../../Assets/Images/congratsIcon.png'
-import UpdateOrderFile from './OrderHistoryComponents/UpdateOrderFile'
+import UpdateOrderFile from './UpdateOrderFile'
 import UpdateCommentsComponent from './OrderHistoryComponents/UpdateCommentsComponent'
-import ClientUpdateOrderComponent from './OrderHistoryComponents/ClientUpdateOrderComponent'
 
 
 
@@ -183,8 +182,7 @@ const dataToRender = () => {
                     })
                 }
                 {/* show update form for expert */}
-                <UpdateOrderFile  data={data} userData={props.userData}  />
-                <ClientUpdateOrderComponent data={data} userData={props.userData} />
+                <UpdateOrderFile  data={data} /> : null
               
             </div>
 
