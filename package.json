@@ -17,6 +17,7 @@
     "react-bootstrap": "^1.6.1",
     "react-content-loader": "^6.0.3",
     "react-countdown": "^2.3.2",
+    "react-credit-card-primitives": "^1.5.1",
     "react-data-table-component": "^7.0.0-rc2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.2",
