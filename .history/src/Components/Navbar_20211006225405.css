@@ -1,0 +1,221 @@
+
+.navbar {
+    background-color: transparent;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.navbar__color {
+    background-color: #066FC0;
+}
+
+.nav__scroll {
+    background-color: #066FC0;
+  
+}
+
+.logo__container {
+    margin-left: 170px;
+}
+
+.nav__content {
+    color: #fff;
+    margin-right: 170px;
+}
+
+.nav__link {
+    padding: 7px 20px;
+    font-family: poppins;
+    font-size: 13px;
+    text-shadow: #000;
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: lightgray;
+}
+
+.signin__icon {
+    margin-bottom:-5px;
+    margin-right: 13px;
+}
+
+.login__details {
+    height: fit-content;
+    margin-top: -13px;
+}
+
+
+
+.nav__content  button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 19px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-family: poppins;
+    font-size: 13px;
+}
+
+.nav__content  button:hover {
+    background-color: #fff;
+    color: #066FC0;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.navbar__right {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    height: fit-content;
+    margin-top: -8px;
+    margin-left: 40px;
+}
+.navbar__right img {
+    width: 24px;
+}
+.navbar__right .icon__wrap {
+    cursor: pointer;
+}
+.navbar__right .inbox ,
+.navbar__right .notifications {
+    margin-right: 25px;
+}
+.navbar__right .inbox .icon__wrap ,
+.navbar__right .notifications .icon__wrap {
+    /* font-size: 28px; */
+}
+.navbar__right .inbox ,
+.navbar__right .notifications,
+.navbar__right .userProfile__auth {
+    position: relative;
+}
+
+.userProfile__auth .icon__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.userProfile__auth .icon__wrap img {
+    width: 40px;
+    border-radius: 7px;
+}
+.userProfile__auth .icon__wrap span {
+    margin-left: 10px;
+}
+.userProfile__auth .icon__wrap span img {
+    width: 13px;
+}
+.nav__content > button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 19px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-family: poppins;
+    font-size: 13px;
+}
+
+.click__menu {
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 20px;
+    display: none;
+}
+
+.nav__content , .close__menu {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:990px) {
+
+    .navbar {
+        padding-top: 0px;
+        margin-top:0px ;
+    }
+
+    .nav__content {
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        transition: left 1s ease;
+        background-color: #066FC0;
+    }
+
+    .nav__link {
+        padding: 10px 0;
+        display: block;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close__menu  {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+    }
+
+    .close__menu > .MuiSvgIcon-root {
+        color: #fff;
+    }
+
+    .click__menu  {
+        display: block;
+        margin-top: 7px;
+    }
+
+    .click__menu > .MuiSvgIcon-root {
+        color: #fff;
+    }
+
+    .logo__container {
+        margin-left: 20px;
+    }
+
+    .nav__content > button {
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 1300px) {
+
+.logo__container {
+    margin-left: 40px;
+}
+
+.nav__content {
+    margin-right: 40px ;
+}
+
+}

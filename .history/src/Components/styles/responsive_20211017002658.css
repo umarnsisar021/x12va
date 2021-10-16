@@ -1,0 +1,225 @@
+@media (min-width : 1300px ) {
+    .sp__content{
+        margin-left: 150px !important ;
+    }
+    .workSec__inner{
+        margin-left : 150px !important;
+    }
+    .wrapper__innerBox{
+        padding: 0px 150px !important;
+        width: 100% !important;
+    }
+}
+@media (max-width : 1300px ) {
+    .evSec__header h2{
+        padding-left: 40px;
+    }
+}
+@media (min-width : 1020px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+    .evSec__header h2{
+        padding-left: 125px;
+    }
+    .tabs__nav{
+        padding: 20px 0px 0px 145px;
+    }
+}
+@media (max-width : 1020px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+    .tabs__nav{
+        padding: 20px 0px 0px 60px;
+    }
+}
+@media (min-width : 800px ) {
+
+}
+@media (max-width : 800px ) {
+    .avatarScreenImage1{
+        width: 255px;
+        height: 255px;
+    }
+    .avatarScreenImage2{
+        width: 265px;
+        height: 265px
+    }
+   .wrapper__innerBox{
+       width: 100% !important;
+       padding: 0px 60px !important;
+   }
+}
+@media (max-width : 700px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+    .spu__vector{
+        padding-left: 9%;
+    }
+    .spu__vector img{
+        width: 100%;
+        height: 100%;
+        padding: 10%;
+        padding-bottom: 0px;
+    }
+    .sp__content{
+        width: 50vw;
+    }
+    .avatarScreenImage1{
+        width: 180px;
+        height: 180px;
+    }
+    .avatarScreenImage2{
+        width: 190px;
+        height: 190px;
+    }
+    .workSec__inner{
+        padding-top:60px
+    }
+    .tabs__nav.nav.nav-tabs{
+        padding:0px 0px 0px 60px !important;
+    }
+    .tabs__link{
+        padding:15px 0px 15px 0px !important;
+        font-size: 12px;
+    }
+    .tabs__link.active{
+        padding: 15px 20px 15px 0px !important;
+    }
+}
+@media (min-width : 500px ) {
+    .sp__content{
+        margin-left: 60px;
+    }
+    .workSec__inner{
+        margin-left : 60px;
+    }
+}
+@media (max-width : 500px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+    .click__menu{
+        margin: 0px;
+    }
+    .evSec__header h2{
+        padding-left: 15px;
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        font-size: 16px;
+    }
+    .HeaderLeftMenu{
+        padding-right: 0px !important;
+    }
+    .HeaderLeftMenu button{
+        font-size: 10px;
+    }
+    .navbar .logo__container{
+        margin-left: 15px;
+    }
+    .navbar .logo__container img{
+        width: 85px;
+    }
+    
+
+    /* Expert Profile */
+    
+    .p__Section{
+        display: block;
+        width: 90%;
+    }
+    .profile__sidebar{
+        width: 100%;
+        border-right:none;
+        border-bottom: 1px solid lightgray;
+    }
+    .profile__details{
+        width: 100%;
+        padding: 30px 15px;
+    }
+    .profile__details .info{
+        width: 100%;
+        padding-right: 0px;
+    }
+    .contact__details_container {
+        display: block !important;
+        padding: 0px 0px 5px;
+        text-align: left !important;
+    }
+    .contact__details_container .cdc_row {
+        padding: 15px 10px;
+    }
+    
+
+    /* Test Details */
+    #test-details-content{
+        display: block;
+    }
+    #test-details-content .test-details-item{
+        
+    }
+
+    /* Support Us */
+    .sp__content{
+        margin-left : 40px;
+    }
+  
+    .sp__detailsBox{
+        display: inline;
+    }
+    .spu__vector, .spu__details{
+        width: 100%;
+        padding: 22px 30px;
+    }
+    .workDetails__wrapper{
+        flex-direction: column-reverse;
+        padding: 60px 0;
+    
+    }
+    .workFurther__details{
+        width: 100%;
+        padding: 22px 30px;
+    }
+    .workImage__sec{
+        width: 100%;
+    }
+    .avatarScreenImage1{
+        width: 100%;
+        object-fit: cover;
+    }
+    .avatarScreenImage2{
+        display: none
+    }
+    .work__lowerBanner{
+        padding: 30px 0;
+    }
+    .lowerBanner__inner{
+        width: 100%;
+        padding: 22px 30px;
+    }
+    .workSec__inner{
+        padding-top:40px
+    }
+}
+@media (max-width : 480px ) {
+    .sp__content h1{
+        font-size: 32px;
+    }
+    .sp__content{
+        padding-top: 50px;
+    }
+}
+
+@media (max-width : 320px ) {
+    .avatar__expimage{
+        width: 130px;
+        height: 130px;
+    }
+    .avatar__area .status__online{
+        top: 12px;
+    }
+   
+}

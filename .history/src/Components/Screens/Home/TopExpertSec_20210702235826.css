@@ -1,0 +1,74 @@
+.experts__title {
+    color: #fff;
+    font-weight: 400;
+    padding: 0 450px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+@media (min-width:501px) and (max-width:600px) {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 50px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    
+}
+
+
+@media (min-width:1000px) and (max-width:1200px)  {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 200px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+}
+
+
+
+@media (min-width:801px) and (max-width:999px)  {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 150px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+}
+
+
+
+@media (min-width:700px) and (max-width:800px)  {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 120px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (min-width:300px) and (max-width:500px) {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 40px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }   
+}
+
+
+@media (min-width:601px) and (max-width:699px) {
+    .experts__title {
+        color: #fff;
+        font-weight: 400;
+        padding: 0 80px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+}

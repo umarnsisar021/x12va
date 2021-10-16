@@ -1,0 +1,254 @@
+/* .banner {
+    background-image: url("../../../Assets/Images/Group\ 333.png");
+    background-size: cover;
+    background-position:center center ;
+    position: relative;
+    object-fit: cover;
+    height: 90vh;
+} */
+
+.banner__content {
+    margin-left: 150px;
+    padding-top: 200px;
+    padding-bottom: 0px;
+    height: fit-content;
+    width: 450px;
+    color: #fff;
+}
+
+.banner__title {
+    font-size: 3rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    padding-bottom: 1.5rem;
+}
+
+.banner__desc {
+    padding-bottom: 1.5rem;
+    color: white;
+}
+
+.banner__input {
+    width: 580px;
+    background-color: #fff;
+    margin-left: 150px;
+    flex-direction: row;
+    padding: 3px;
+    border-radius: 5px;
+    margin-top: 19px;
+}
+
+.search_container{
+    display: flex;
+}
+
+.input__field {
+    width: 78%;
+    border: 0;
+    outline: none;
+    padding: 17px 20px;
+    font-size: 16px;
+    border: 1px solid white;
+    margin-right: 5px;
+}
+.input__field:focus {
+    width: 78%;
+    border: 0;
+    outline: none;
+    padding: 17px 20px;
+    font-size: 13px;
+    border: 1px solid #066fc0;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.banner__button {
+    color: #fff;
+    background-image: url("../../../Assets/Images/Group\ 326.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 22%;
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search_results {
+    width: 1005;
+}
+.search_results  .search_r_ul{
+   list-style: none;
+   margin-top: 2px;
+   padding-left: 0px;
+   margin-bottom: 0px;
+}
+.search_results  .search_r_ul li{
+    padding: 10px 20px;
+}
+.search_results  .search_r_ul li:hover{
+    background: #056fc0;
+    color: white;
+    border-radius: 5px;
+}
+
+
+@media (min-width:801px) and (max-width:990px){
+
+.banner__content {
+    margin-bottom: 30px;   
+    width: 450px;
+    padding-top: 150px;
+    margin-left: 40px;
+}
+
+.banner__title {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    padding: 0 40px;
+}
+
+.banner__desc {
+    padding-bottom: 1.5rem;
+    padding: 0 40px;
+}
+
+.banner__input {
+    width: 470px;
+    margin-top: 25px;
+    padding: 5px 0;
+    margin-left: 80px;
+}
+
+.input__field {
+    width: 329px;
+    padding: 15px 15px;
+    font-size: 13px;
+}
+
+.banner__button {
+    color: #fff;
+    width: 135px;
+}
+
+
+}
+
+
+
+@media (min-width:700px) and (max-width:800px) {
+
+    .banner__content {
+        margin-bottom: 30px;   
+        width: 450px;
+        padding-top: 150px;
+        margin: 0 auto;
+    }
+    
+    .banner__title {
+        font-size: 2rem;
+        padding-bottom: 1.5rem;
+        padding: 0 40px;
+    }
+
+    .banner__input {
+        width: 470px;
+        margin-top: 25px;
+        padding: 5px 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .input__field {
+        width: 329px;
+        padding: 10px 8px;
+    }
+
+    
+.banner__button {
+    color: #fff;
+    width: 135px;
+}
+
+}
+
+
+@media (min-width:501px) and (max-width:699px) {
+
+    .banner__content {
+        margin-bottom: 30px;   
+        width: 100%;
+        padding-top: 150px;
+        margin: 0 auto;
+    }
+    
+    .banner__title {
+        font-size: 2rem;
+        padding-bottom: 1.5rem;
+        padding: 0 120px;
+    }
+
+    .banner__desc {
+        padding-bottom: 1.5rem;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+
+    .banner__input {
+        width: 64%;
+        margin-top: 25px;
+        padding: 2px 5px;
+        margin:0 auto;
+    }
+
+    .input__field {
+        padding: 10px 12px;
+        width: 329px;
+    }
+    
+
+    .banner__button {
+        color: #fff;
+        width: 135px;
+    }
+    
+}
+
+@media (min-width:300px) and (max-width:500px) {
+    .banner__content {
+        margin-bottom: 30px;   
+        width: 100%;
+        padding-top: 150px;
+        margin: 0 auto;
+    }
+
+    
+    .banner__title {
+        font-size: 1.3rem;
+        padding-bottom: 0.4rem;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    
+    .banner__desc {
+        padding-bottom: 0.4rem;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+
+    .banner__input {
+        width: 80%;
+        margin-top: 20px;
+        padding: 2px 5px;
+        margin:20px auto;
+    }
+
+    .input__field {
+        padding: 10px 12px;
+    }
+
+}

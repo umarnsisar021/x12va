@@ -1,0 +1,39 @@
+@media (min-width : 1020px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+}
+@media (max-width : 1020px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+}
+@media (max-width : 700px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+}
+
+@media (max-width : 500px ) {
+    .expert__grid{
+        width: 95% !important ;
+    }
+    .evSec__header h2{
+        padding-left: 15px;
+    }
+    .navbar .logo__container{
+        margin-left: 15px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width : 320px ) {
+    .avatar__expimage{
+        width: 130px;
+        height: 130px;
+    }
+    .avatar__area .status__online{
+        top: 12px;
+    }
+   
+}
