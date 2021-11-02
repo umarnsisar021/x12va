@@ -23,8 +23,8 @@ import TestDetails from './Components/Screens/Profile/TestDetails';
 import TestForm from './Components/Screens/Profile/TestForm';
 import TestCompleted from './Components/Screens/Profile/TestCompleted';
 import Signup from './Components/Screens/Signup/Signup';
-// import { ToastContainer } from 'react-toastify';
-// import Congratulations from './Components/Screens/Congratulations/Congratulations';
+import { ToastContainer } from 'react-toastify';
+import Congratulations from './Components/Screens/Congratulations/Congratulations';
 import SupportUs from './Components/Screens/SupportUs/SupportUs';
 import SendProposal from './Components/Screens/Propossal/SendProposal'
 import Proposals from './Components/Screens/Propossal/Proposals'

@@ -26,7 +26,7 @@ function UserProfileDropdown(props) {
 
                 </li>
                 <li className="profile__li" onClick={props.onClick}>
-                    <a href="">
+                    <a>
                         <DashboardIcon />
                         Dashboard
                     </a>

@@ -114,6 +114,33 @@ function NewVerifyRequestComponent(props) {
                 </div>)
         },
         {
+            name: 'SUBJECT',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<div style={{alignItems: 'center'}}>
+                    <Avatar
+                    color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                    name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                    />
+                    <span className='align-middle pl-2'>{row.skill_name}</span>
+                </div>)
+        },
+        {
+            name: 'DESCRIPTION',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => row.description
+        },
+        {
+            name: 'DELIVERY',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<> {`${row.days} days`}</>)
+        },
+        {
                 name: '',
                 minWidth: '200px',
                 selector: 'Name',
@@ -128,19 +155,6 @@ function NewVerifyRequestComponent(props) {
             },
 
 ]
-    const ExpandedComponent = ({ data }) => {
-        return <div className="px-5 py-4">
-                <div className="col-md-12">
-                    <span><strong>Subject : </strong>{data.skill_name}</span>
-                </div>
-                 <div className="col-md-12 py-2">
-                     <strong>Description :</strong>
-                     <p>{data.description}</p>
-                 </div>
-        </div> 
-        
-       
-    };
     // ** Table data to render
     const dataToRender = () => {
         let filters =[];
@@ -173,7 +187,7 @@ function NewVerifyRequestComponent(props) {
                                 responsive
                                 paginationServer
                                 expandableRows
-                                expandableRowsComponent={ExpandedComponent}
+                                expandableRowsComponent={}
                                 columns={columns}
                                 sortIcon={<ChevronDown />}
                                 className='react-dataTable'

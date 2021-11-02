@@ -84,14 +84,14 @@ function NewVerifyRequestComponent(props) {
     const columns = [
         {
             name: 'ORDER NUMBER',
-            minWidth: '5%',
+            minWidth: '8%',
             selector: 'Name',
             sortable: true,
             cell: row => `#${row.id}`
         },
         {
             name: 'EXPERT',
-            minWidth: '',
+            minWidth: '20%',
             selector: 'Name',
             sortable: true,
             cell: row => (
@@ -103,7 +103,7 @@ function NewVerifyRequestComponent(props) {
         },
         {
             name: 'CLIENT',
-            minWidth: '',
+            minWidth: '20%',
             selector: 'Name',
             sortable: true,
             cell: row => (
@@ -112,6 +112,33 @@ function NewVerifyRequestComponent(props) {
                     />
                     <span className='align-middle pl-2'>{row.client_first_name} {row.client_last_name}</span>
                 </div>)
+        },
+        {
+            name: 'SUBJECT',
+            minWidth: '20%',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<div style={{alignItems: 'center'}}>
+                    <Avatar
+                    color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                    name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                    />
+                    <span className='align-middle pl-2'>{row.skill_name}</span>
+                </div>)
+        },
+        {
+            name: 'DESCRIPTION',
+            minWidth: '35%',
+            selector: 'Name',
+            sortable: true,
+            cell: row => row.description
+        },
+        {
+            name: 'DELIVERY',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<> {`${row.days} days`}</>)
         },
         {
                 name: '',
@@ -128,19 +155,6 @@ function NewVerifyRequestComponent(props) {
             },
 
 ]
-    const ExpandedComponent = ({ data }) => {
-        return <div className="px-5 py-4">
-                <div className="col-md-12">
-                    <span><strong>Subject : </strong>{data.skill_name}</span>
-                </div>
-                 <div className="col-md-12 py-2">
-                     <strong>Description :</strong>
-                     <p>{data.description}</p>
-                 </div>
-        </div> 
-        
-       
-    };
     // ** Table data to render
     const dataToRender = () => {
         let filters =[];
@@ -172,8 +186,6 @@ function NewVerifyRequestComponent(props) {
                                 pagination
                                 responsive
                                 paginationServer
-                                expandableRows
-                                expandableRowsComponent={ExpandedComponent}
                                 columns={columns}
                                 sortIcon={<ChevronDown />}
                                 className='react-dataTable'

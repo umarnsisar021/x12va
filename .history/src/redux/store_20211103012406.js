@@ -9,9 +9,9 @@ import { createStore, applyMiddleware } from 'redux'
 //     key: 'root',
 //     storage,
 //   }
-  const store = () => {
+
+  export default () => {
     let store = createStore(rootReducer,applyMiddleware(thunk))
     let persistor = persistStore(store);
     return { store, persistor }
   }
-  export default store

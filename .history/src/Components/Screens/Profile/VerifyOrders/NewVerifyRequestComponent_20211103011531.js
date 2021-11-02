@@ -114,6 +114,13 @@ function NewVerifyRequestComponent(props) {
                 </div>)
         },
         {
+            name: 'DELIVERY',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<> {`${row.days} days`}</>)
+        },
+        {
                 name: '',
                 minWidth: '200px',
                 selector: 'Name',
@@ -133,7 +140,7 @@ function NewVerifyRequestComponent(props) {
                 <div className="col-md-12">
                     <span><strong>Subject : </strong>{data.skill_name}</span>
                 </div>
-                 <div className="col-md-12 py-2">
+                 <div className="col-md-12">
                      <strong>Description :</strong>
                      <p>{data.description}</p>
                  </div>

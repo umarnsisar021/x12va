@@ -12,7 +12,7 @@ function UserProfileDropdown(props) {
                 <li className="profile__li" onClick={props.onClick}>
 
                     {
-                        props.account_mode === 'client' ?
+                        props.account_mode == 'client' ?
                         <Link to="/cprofile?self=true" >
                             <DashboardIcon />
                             Profile

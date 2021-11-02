@@ -114,6 +114,13 @@ function NewVerifyRequestComponent(props) {
                 </div>)
         },
         {
+            name: 'DELIVERY',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => (<> {`${row.days} days`}</>)
+        },
+        {
                 name: '',
                 minWidth: '200px',
                 selector: 'Name',

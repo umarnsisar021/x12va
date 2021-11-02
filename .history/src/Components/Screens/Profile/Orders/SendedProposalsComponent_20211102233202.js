@@ -1,15 +1,16 @@
 import React from 'react'
 /// Data Table
 import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather'
 import DataTable from 'react-data-table-component'
-import useJwt from '@utils'
+import useJwt, { useQueryLocation } from '@utils'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import GlobalLoader from '@components/GlobalLoader'
 import Avatar from 'react-avatar'
-import default_profile from '@images/default-profile.png';
-function NewVerifyRequestComponent(props) {
+function SendedProposalsComponent(props) {
+    let history =  useHistory();
+    let query = useQueryLocation();
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
     const [data, setdata] = React.useState([])
@@ -19,27 +20,16 @@ function NewVerifyRequestComponent(props) {
     },3000)
     React.useEffect(()=>{
         props.showFadeLoader();
-        useJwt.post('experts/get_verify_requests', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
+        useJwt.post('experts/get_expert_tasks_send_proposals', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken }).then((res)=>{
             setdata(res.data.records)
             props.hideFadeLoader();
         })
     },[])
 
-    const customStyles = {
-        rows: {
-            style: {
-              minHeight: '720px', // override the row height
-            }
-          },
-          headCells: {
-          style: {
-            paddingLeft: '80px', // override the cell padding for head cells
-            paddingRight: '80px',
-          },
-        },
-      
+    const handleChange = (state) => {
+        //setSelectedData(state.selectedRows);
+        console.log(state);
       };
-
     // ** Custom Pagination
     const CustomPagination = (d) => {
         const count = Number(Math.ceil(data.total / rowsPerPage))
@@ -62,7 +52,6 @@ function NewVerifyRequestComponent(props) {
                     previousClassName={'page-item prev'}
                     previousLinkClassName={'page-link'}
                     pageLinkClassName={'page-link'}
-                    customStyles={customStyles}
                     containerClassName={'pagination react-paginate float-right justify-content-end my-2 pr-1'}
                 />
             </div>
@@ -84,63 +73,55 @@ function NewVerifyRequestComponent(props) {
     const columns = [
         {
             name: 'ORDER NUMBER',
-            minWidth: '5%',
+            minWidth: '8%',
             selector: 'Name',
             sortable: true,
             cell: row => `#${row.id}`
         },
         {
-            name: 'EXPERT',
+        name: 'SUBJECT',
+        minWidth: '15%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<div className="d-flex" style={{alignItems: 'center'}}>
+                <Avatar
+                color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                />
+                <span className='align-middle pl-2'>{row.skill_name}</span>
+            </div>)
+    },
+    
+    {
+        name: 'PROBLEM STATEMENT',
+        minWidth: '25%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => row.task_description
+    },
+    {
+        name: 'DESCRIPTION',
+        minWidth: '25%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => row.task_description
+    },
+    {
+        name: 'DELIVERY',
+        minWidth: '',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<> {`${row.days} days`}</>)
+    },
+    {
+            name: 'BUDGET',
             minWidth: '',
             selector: 'Name',
             sortable: true,
-            cell: row => (
-                <div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar src={row.expert_avatar ? row.expert_avatar : default_profile} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.expert_first_name} {row.expert_last_name}</span>
-                </div>)
+            cell: row => `$${row.budget}`
         },
-        {
-            name: 'CLIENT',
-            minWidth: '',
-            selector: 'Name',
-            sortable: true,
-            cell: row => (
-                <div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar src={row.client_avatar ? row.client_avatar : default_profile} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.client_first_name} {row.client_last_name}</span>
-                </div>)
-        },
-        {
-                name: '',
-                minWidth: '200px',
-                selector: 'Name',
-                sortable: true,
-                cell: row => (<>
-                    <Link to={{ pathname: '/experts/order/view', data: row}}params={{ query: "" }}>
-                        <button className="btn-theme-light btn-sm">
-                            View Details
-                        </button>
-                    </Link>
-                </>)
-            },
 
 ]
-    const ExpandedComponent = ({ data }) => {
-        return <div className="px-5 py-4">
-                <div className="col-md-12">
-                    <span><strong>Subject : </strong>{data.skill_name}</span>
-                </div>
-                 <div className="col-md-12 py-2">
-                     <strong>Description :</strong>
-                     <p>{data.description}</p>
-                 </div>
-        </div> 
-        
-       
-    };
     // ** Table data to render
     const dataToRender = () => {
         let filters =[];
@@ -164,7 +145,7 @@ function NewVerifyRequestComponent(props) {
                 <div className="wrapper__box">
                     <div className="wrapper__innerBox" style={{ padding: '0px', background: '#f6f7fa' }}>
                         <div className="py-2">
-                            <h5 className="">Order Verify Requests</h5>
+                            <h5 className="">Sent Proposals</h5>
                         </div>
                         <div>
                             <DataTable
@@ -172,13 +153,14 @@ function NewVerifyRequestComponent(props) {
                                 pagination
                                 responsive
                                 paginationServer
-                                expandableRows
-                                expandableRowsComponent={ExpandedComponent}
                                 columns={columns}
                                 sortIcon={<ChevronDown />}
                                 className='react-dataTable'
                                 paginationComponent={CustomPagination}
                                 data={dataToRender()}
+                                onRowClicked={(row)=>{
+                                    history.push('/experts/proposals/view/'+row.proposal_id)
+                                }}
                             />
                         </div>
 
@@ -204,4 +186,4 @@ function mapStateToProps(state) {
     const { auth } = state
     return { userData: auth.userData ,sessionToken: auth.sessionToken }
 }
-export default connect(mapStateToProps,mapDispatchToProps)(NewVerifyRequestComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(SendedProposalsComponent)

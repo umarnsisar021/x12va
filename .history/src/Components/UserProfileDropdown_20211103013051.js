@@ -26,7 +26,7 @@ function UserProfileDropdown(props) {
 
                 </li>
                 <li className="profile__li" onClick={props.onClick}>
-                    <a href="">
+                    <a href="#">
                         <DashboardIcon />
                         Dashboard
                     </a>
@@ -41,12 +41,12 @@ function UserProfileDropdown(props) {
                     props.userData.is_seller == 1 ?
                         props.account_mode === 'client' ?
                         <li className="profile__li" onClick={props.onClick}>
-                            <a href="" onClick={()=> {props.switch('expert');history.push("/profile")}}>
+                            <a href="#" onClick={()=> {props.switch('expert');history.push("/profile")}}>
                                 <ExitToAppIcon />
                                 Switch to Expert
                             </a>
                         </li> : <li className="profile__li" onClick={props.onClick}>
-                            <a href="" onClick={()=> {props.switch('client');history.push("/cprofile?self=true")}}>
+                            <a href="#" onClick={()=> {props.switch('client');history.push("/cprofile?self=true")}}>
                                 <ExitToAppIcon />
                                 Switch to Client
                             </a>

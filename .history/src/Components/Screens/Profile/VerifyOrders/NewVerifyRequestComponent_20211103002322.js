@@ -1,14 +1,13 @@
 import React from 'react'
 /// Data Table
 import ReactPaginate from 'react-paginate'
-import { ChevronDown } from 'react-feather'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather'
 import DataTable from 'react-data-table-component'
-import useJwt from '@utils'
+import useJwt, { useQueryLocation } from '@utils'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import GlobalLoader from '@components/GlobalLoader'
 import Avatar from 'react-avatar'
-import default_profile from '@images/default-profile.png';
 function NewVerifyRequestComponent(props) {
     const [currentPage, setCurrentPage] = React.useState(1)
     const [rowsPerPage, setRowsPerPage] = React.useState(10)
@@ -84,63 +83,53 @@ function NewVerifyRequestComponent(props) {
     const columns = [
         {
             name: 'ORDER NUMBER',
-            minWidth: '5%',
+            minWidth: '8%',
             selector: 'Name',
             sortable: true,
             cell: row => `#${row.id}`
         },
         {
-            name: 'EXPERT',
-            minWidth: '',
+        name: 'SUBJECT',
+        minWidth: '20%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<div style={{alignItems: 'center'}}>
+                <Avatar
+                color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                />
+                <span className='align-middle pl-2'>{row.skill_name}</span>
+            </div>)
+    },
+    {
+        name: 'DESCRIPTION',
+        minWidth: '35%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => row.description
+    },
+    {
+        name: 'DELIVERY',
+        minWidth: '',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<> {`${row.days} days`}</>)
+    },
+    {
+            name: 'BUDGET',
+            minWidth: '200px',
             selector: 'Name',
             sortable: true,
-            cell: row => (
-                <div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar src={row.expert_avatar ? row.expert_avatar : default_profile} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.expert_first_name} {row.expert_last_name}</span>
-                </div>)
+            cell: row => (<>
+                <Link to={{ pathname: '/experts/order/view', data: row}}params={{ query: "" }}>
+                    <button className="btn-theme-light btn-sm">
+                        View Order
+                    </button>
+                </Link>
+            </>)
         },
-        {
-            name: 'CLIENT',
-            minWidth: '',
-            selector: 'Name',
-            sortable: true,
-            cell: row => (
-                <div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar src={row.client_avatar ? row.client_avatar : default_profile} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.client_first_name} {row.client_last_name}</span>
-                </div>)
-        },
-        {
-                name: '',
-                minWidth: '200px',
-                selector: 'Name',
-                sortable: true,
-                cell: row => (<>
-                    <Link to={{ pathname: '/experts/order/view', data: row}}params={{ query: "" }}>
-                        <button className="btn-theme-light btn-sm">
-                            View Details
-                        </button>
-                    </Link>
-                </>)
-            },
 
 ]
-    const ExpandedComponent = ({ data }) => {
-        return <div className="px-5 py-4">
-                <div className="col-md-12">
-                    <span><strong>Subject : </strong>{data.skill_name}</span>
-                </div>
-                 <div className="col-md-12 py-2">
-                     <strong>Description :</strong>
-                     <p>{data.description}</p>
-                 </div>
-        </div> 
-        
-       
-    };
     // ** Table data to render
     const dataToRender = () => {
         let filters =[];
@@ -172,8 +161,6 @@ function NewVerifyRequestComponent(props) {
                                 pagination
                                 responsive
                                 paginationServer
-                                expandableRows
-                                expandableRowsComponent={ExpandedComponent}
                                 columns={columns}
                                 sortIcon={<ChevronDown />}
                                 className='react-dataTable'
