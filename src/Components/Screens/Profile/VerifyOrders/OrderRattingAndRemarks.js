@@ -141,7 +141,7 @@ function OrderRattingAndRemarks(props) {
             <div className="refc__inner my-2 mb-4">
                 <div className=" text-center">
                         <img className="py-2" src={CongAvatar} style={{height:'60px'}} />
-                        <h6 className="py-2 m-0">YOU RATING & REMARKS</h6>
+                        <h6 className="py-2 m-0">YOUR RATING & REMARKS</h6>
                 </div>
             {
                 rated == true ? null : 

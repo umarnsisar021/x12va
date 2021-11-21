@@ -1,32 +1,35 @@
-import React from 'react';
-import Avatar from 'react-avatar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+/// Data Table
+import ReactPaginate from 'react-paginate'
+import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather'
+import DataTable from 'react-data-table-component'
+import useJwt, { useQueryLocation } from '@utils'
+import { connect } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
+import GlobalLoader from '@components/GlobalLoader'
+import Avatar from 'react-avatar'
+function ExpertOnVerificationsTasksComponent(props) {
+    let history =  useHistory();
+    let query = useQueryLocation();
+    const [currentPage, setCurrentPage] = React.useState(1)
+    const [rowsPerPage, setRowsPerPage] = React.useState(10)
+    const [data, setdata] = React.useState([])
+    props.showFadeLoader();
+    setTimeout(()=>{
+        props.hideFadeLoader();
+    },3000)
+    React.useEffect(()=>{
+        props.showFadeLoader();
+        useJwt.post('experts/get_expert_tasks', {page: currentPage, perPage: rowsPerPage, token: props.sessionToken,status: 3 }).then((res)=>{
+            setdata(res.data.records)
+            props.hideFadeLoader();
+        })
+    },[])
 
-import {Link} from 'react-router-dom';
-import useJwt, { useQueryLocation } from '@utils';
-import default_profile from '@images/default-profile.png';
-/// Redux
-import { connect } from 'react-redux';
-import ContentLoader from '../../../ContentLoader'
-import { useHistory } from 'react-router';
-import ReactPaginate from 'react-paginate';
-import DataTable from 'react-data-table-component';
-import { ChevronDown } from 'react-feather';
-import GlobalLoader from '../../../GlobalLoader';
-const ExpertOnVerificationsTasksComponent = (props) => {
-  let history = useHistory();
-  let query = useQueryLocation();
-  const [currentPage, setCurrentPage] = React.useState(1)
-  const [rowsPerPage, setRowsPerPage] = React.useState(10)
-  const [data, setdata] = React.useState([])
-  React.useEffect(()=>{
-    let token = props.sessionToken;
-    useJwt.post('experts/get_expert_tasks',{status:3,token:token}).then((res)=>{
-        setdata(res.data.records.data);
-    })
-  },[])
-
-
+    const handleChange = (state) => {
+        //setSelectedData(state.selectedRows);
+        console.log(state);
+      };
     // ** Custom Pagination
     const CustomPagination = (d) => {
         const count = Number(Math.ceil(data.total / rowsPerPage))
@@ -52,12 +55,12 @@ const ExpertOnVerificationsTasksComponent = (props) => {
                     containerClassName={'pagination react-paginate float-right justify-content-end my-2 pr-1'}
                 />
             </div>
-  
+
         )
     }
     // ** Function in get data on page change
     const handlePagination = page => {
-        useJwt.post('experts/get_expert_new_tasks', {
+        useJwt.post('experts/get_expert_tasks', {
             page: page.selected + 1,
             perPage: rowsPerPage,
             token: props.sessionToken
@@ -70,61 +73,62 @@ const ExpertOnVerificationsTasksComponent = (props) => {
     const columns = [
         {
             name: 'ORDER NUMBER',
-            selector: 'Name',   
+            minWidth: '8%',
+            selector: 'Name',
             sortable: true,
             cell: row => `#${row.id}`
         },
         {
-            name: 'EXPERT',
-            minWidth: '20%',
-            selector: 'Name',
-            sortable: true,
-            cell: row => (
-                <div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar src={row.expert_avatar ? row.expert_avatar : default_profile} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.expert_first_name} {row.expert_last_name}</span>
-                </div>)
-        },
-        {
-            name: 'SUBJECT',
-            minWidth: '20%',
-            selector: 'Name',
-            sortable: true,
-            cell: row => (<div className="d-flex" style={{alignItems: 'center'}}>
-                    <Avatar
-                    color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
-                    name={row.skill_name} round={true} size={32}  textSizeRatio={2}
-                    />
-                    <span className='align-middle pl-2'>{row.skill_name}</span>
-                </div>)
-        },
-        {
-            name: '',
-            minWidth: '',
-            selector: '',
-            sortable: true,
-            cell: row => (
-                <div className="text-right px-3" style={{width:'100%'}}>
-                    <button style={{fontSize: '12px'}} className="btn-theme-default">
-                        <Link to={{
-                            pathname:"/proposals/"+row.id,
-                            data:{task_id:row.id}
-                        }}>View details</Link>
-                    </button>
-                </div>
-                
-            )
-        },
+        name: 'SUBJECT',
+        minWidth: '15%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<div className="d-flex" style={{alignItems: 'center'}}>
+                <Avatar
+                color={Avatar.getRandomColor('sitebase', ['#21BCDD', '#00A080', '#E7C621', '#8F43FB'])}
+                name={row.skill_name} round={true} size={32}  textSizeRatio={2}
+                />
+                <span className='align-middle pl-2'>{row.skill_name}</span>
+            </div>)
+    },
     
-  ]
+    {
+        name: 'PROBLEM STATEMENT',
+        minWidth: '25%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => row.task_description
+    },
+    {
+        name: 'DESCRIPTION',
+        minWidth: '25%',
+        selector: 'Name',
+        sortable: true,
+        cell: row => row.task_description
+    },
+    {
+        name: 'DELIVERY',
+        minWidth: '',
+        selector: 'Name',
+        sortable: true,
+        cell: row => (<> {`${row.days} days`}</>)
+    },
+    {
+            name: 'BUDGET',
+            minWidth: '',
+            selector: 'Name',
+            sortable: true,
+            cell: row => `$${row.budget}`
+        },
+
+]
     // ** Table data to render
     const dataToRender = () => {
         let filters =[];
         const isFiltered = Object.keys(filters).some(function (k) {
         return filters[k].length > 0
         })
-  
+
         if (data.length > 0) {
             return data
         } else if (data.length === 0 && isFiltered) {
@@ -134,52 +138,52 @@ const ExpertOnVerificationsTasksComponent = (props) => {
         }
     }
 
-  if(data){
-    return (
-        <React.Fragment>
-              
-            <div className="wrapper__box">
-                <div className="wrapper__innerBox" style={{ padding: '0px', background: '#f6f7fa' }}>
-                    <div className="py-2">
-                        <h5 className="">On Verifying Orders</h5>
-                    </div>
-                    <div>
-                        <DataTable
-                            noHeader
-                            pagination
-                            responsive
-                            paginationServer
-                            columns={columns}
-                            sortIcon={<ChevronDown />}
-                            className='react-dataTable'
-                            paginationComponent={CustomPagination}
-                            data={dataToRender()}
-                            // onRowClicked={(row)=>{
-                            //     history.push('/order/view/history/'+row.id)
-                            // }}
-                        />
+    if(data){
+        return (
+            <React.Fragment>
+                
+                <div className="wrapper__box">
+                    <div className="wrapper__innerBox" style={{ padding: '0px', background: '#f6f7fa' }}>
+                        <div className="py-2">
+                            <h5 className="">On Verification Orders</h5>
+                        </div>
+                        <div>
+                            <DataTable
+                                noHeader
+                                pagination
+                                responsive
+                                paginationServer
+                                columns={columns}
+                                sortIcon={<ChevronDown />}
+                                className='react-dataTable'
+                                paginationComponent={CustomPagination}
+                                data={dataToRender()}
+                                onRowClicked={(row)=>{
+                                    history.push('/experts/order/view/history/'+row.id)
+                                }}
+                            />
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </React.Fragment>
-
-      )
-  }
-  else{
-      return <ContentLoader />
-  }
+            </React.Fragment>
+        )
+    }
+    else{
+    return <GlobalLoader/>
+    }
 
 }
-
-
 const mapDispatchToProps = (dispatch) => {
     return {
-      // dispatching plain actions
-      // login: (data) => dispatch({ type: 'LOGIN', payload:data }),
+        // dispatching plain actions
+        login: (data) => dispatch({ type: 'LOGIN', payload: data }),
+        showFadeLoader: (text) => dispatch({ type: 'SET_FADE_LOADER', payload: 'true' , text: text}),
+        hideFadeLoader: (data) => dispatch({ type: 'SET_FADE_LOADER', payload: false , text:'' }),
     }
-  }
+}
 function mapStateToProps(state) {
     const { auth } = state
-    return { userData : auth.userData, sessionToken: auth.sessionToken }
+    return { userData: auth.userData ,sessionToken: auth.sessionToken }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(ExpertOnVerificationsTasksComponent)

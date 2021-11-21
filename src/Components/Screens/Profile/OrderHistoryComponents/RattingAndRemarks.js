@@ -177,6 +177,9 @@ function RattingAndRemarks(props) {
             return null
         }
     }
+    else{
+        return null
+    }
 }
 
 export default RattingAndRemarks

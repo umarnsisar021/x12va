@@ -146,7 +146,7 @@ const dataToRender = () => {
                                             <div>
                                                 <Avatar round size={40} src={data.expert.avatar}/>
                                             </div>
-                                            <div className="pl-2" style={{}}>
+                                            <div className="pl-2" style={{display:"list-item"}}>
                                                 <h6 className="f-14 mb-1">{data.expert.name}</h6>
                                                 <h6 className="color-gray f-12"><Moment format="MMM DD, YYYY">{u.created_at}</Moment></h6>
                                             </div>
@@ -191,9 +191,8 @@ const dataToRender = () => {
                 {/* show update form for expert */}
                 <UpdateOrderFile callback={Run}  data={data} userData={props.userData} sessionToken={props.sessionToken} showFadeLoader={props.showFadeLoader} hideFadeLoader={props.hideFadeLoader}  />
                 <ClientUpdateOrderComponent callback={Run} data={data} userData={props.userData} showFadeLoader={props.showFadeLoader} hideFadeLoader={props.hideFadeLoader} sessionToken={props.sessionToken} />
-                <VerifierRatingAndRemarks callback={Run} data={data} userData={props.userData} showFadeLoader={props.showFadeLoader} hideFadeLoader={props.hideFadeLoader} sessionToken={props.sessionToken}/>
                 <RattingAndRemarks callback={Run} data={data} userData={props.userData} showFadeLoader={props.showFadeLoader} hideFadeLoader={props.hideFadeLoader} sessionToken={props.sessionToken} />
-            
+              
             </div>
 
             </React.Fragment>

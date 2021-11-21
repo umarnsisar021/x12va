@@ -9,8 +9,7 @@ import CompletedTasksComponent from './CompletedTasksComponent';
 import SendedProposalsComponent from './SendedProposalsComponent';
 import ExpertOnVerificationsTasksComponent from './ExpertOnVerificationsTasksComponent';
 import { useHistory, useParams } from 'react-router-dom';
-// import AssignedOrders from './AssignedOrders';
-// import PlacedOrders from './PlacedOrders';
+
 const ExpertNewTasks = () => {
   let history = useHistory(); 
   const {type} = useParams();
